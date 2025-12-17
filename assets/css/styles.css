@@ -20,6 +20,14 @@
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-smooth: 0.35s ease;
+  /* Theme helpers */
+  --on-accent: #ffffff;
+  --overlay-button-bg: rgba(255, 255, 255, 0.9);
+  --overlay-button-hover-bg: #ffffff;
+  --overlay-button-text: var(--accent-primary);
+  --overlay-dot: rgba(255, 255, 255, 0.5);
+  --overlay-dot-hover: rgba(255, 255, 255, 0.8);
+  --overlay-dot-active: #ffffff;
 }
 
 /* Light theme */
@@ -36,6 +44,14 @@ html[data-theme="light"] {
   --card-bg: #CFE4FF;
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.08);
   --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.06);
+  /* Light theme helpers */
+  --on-accent: #ffffff;
+  --overlay-button-bg: rgba(0, 0, 0, 0.06);
+  --overlay-button-hover-bg: rgba(0, 0, 0, 0.12);
+  --overlay-button-text: var(--accent-primary);
+  --overlay-dot: rgba(0, 0, 0, 0.35);
+  --overlay-dot-hover: rgba(0, 0, 0, 0.55);
+  --overlay-dot-active: #000000;
 }
 
 * {
@@ -144,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 #contact-whatsapp {
   background: #25d366;
   border-color: #25d366;
-  color: #fff;
+  color: var(--on-accent);
   transition: filter var(--transition-fast);
 }
 
@@ -155,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 #contact-telegram {
   background: #229ed9;
   border-color: #229ed9;
-  color: #fff;
+  color: var(--on-accent);
   transition: filter var(--transition-fast);
 }
 
@@ -166,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
 #contact-email {
   background: #e94235;
   border-color: #e94235;
-  color: #fff;
+  color: var(--on-accent);
   transition: filter var(--transition-fast);
 }
 
@@ -269,7 +285,7 @@ a:active,
   font-family: var(--heading-font);
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: var(--on-accent);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: background-color var(--transition-normal);
@@ -402,7 +418,7 @@ html:not([data-theme="light"]) .nav-links a:hover {
 
 .nav-links .pill {
   background: var(--accent-primary);
-  color: #fff;
+  color: var(--on-accent);
   box-shadow: var(--shadow-sm);
 }
 
@@ -752,7 +768,7 @@ html:not([data-theme="light"]) .nav-links a:hover {
 
 .btn.primary {
   background: var(--accent-primary);
-  color: #fff;
+  color: var(--on-accent);
   box-shadow: var(--shadow-sm);
 }
 
@@ -960,7 +976,7 @@ html:not([data-theme="light"]) .btn.ghost:hover {
   align-items: center;
   padding: 14px 16px;
   border-radius: 14px;
-  background: #0b1020;
+  background: var(--bg-secondary);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: background-color var(--transition-normal);
 }
@@ -1144,13 +1160,13 @@ html:not([data-theme="light"]) .btn.ghost:hover {
   gap: 18px;
   align-items: center;
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  color: #fff9f7;
+  color: var(--on-accent);
   border: none;
   transition: background 0.3s ease;
 }
 
 html[data-theme="light"] .cta {
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .cta__note {
@@ -1552,7 +1568,7 @@ html[data-theme="light"] .cta__note {
 /* Documents page */
 .documents-hero {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  color: var(--on-accent);
   padding: 80px 20px;
   text-align: center;
   min-height: 320px;
@@ -1565,7 +1581,7 @@ html[data-theme="light"] .cta__note {
   font-size: 48px;
   font-weight: 700;
   margin: 24px 0 0 0;
-  color: white;
+  color: var(--on-accent);
 }
 
 .documents-hero .eyebrow {
@@ -1808,7 +1824,7 @@ html[data-theme="light"] .testimonial-quote {
     position: absolute;
     right: 0;
     top: 64px;
-    background: #0b1020;
+    background: var(--bg-secondary);
     padding: 10px;
     border-radius: 12px;
     box-shadow: var(--shadow-lg);

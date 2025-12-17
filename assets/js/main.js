@@ -894,10 +894,55 @@ function setupBurgerMenu() {
     return;
   }
 
-  const closeTriggers = burgerMenu.querySelectorAll('[data-burger-close]');
-  const menuLinks = burgerMenu.querySelectorAll('.burger-menu__link');
+  // Save initial menu markup to allow safe restoration if DOM was wiped
+  const initialMenuHTML = burgerMenu.innerHTML;
+
+  // Helper to (re)bind all handlers for the current burger DOM
+  const bindBurgerHandlers = () => {
+    const closeTriggers = burgerMenu.querySelectorAll('[data-burger-close]');
+    const menuLinks = burgerMenu.querySelectorAll('.burger-menu__link');
+
+    closeTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMenu();
+      });
+    });
+
+    // Handle burger menu dropdown
+    const burgerDropdownToggle = burgerMenu.querySelector('.burger-menu__dropdown-toggle');
+    if (burgerDropdownToggle) {
+      burgerDropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isExpanded = burgerDropdownToggle.getAttribute('aria-expanded') === 'true';
+        burgerDropdownToggle.setAttribute('aria-expanded', String(!isExpanded));
+        console.log('Dropdown toggled. Expanded:', !isExpanded);
+      });
+      const dropdownContent = burgerMenu.querySelector('.burger-menu__dropdown-content');
+      if (dropdownContent) {
+        dropdownContent.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      }
+    }
+
+    // Close menu only for regular links (not dropdown toggle or dropdown links)
+    menuLinks.forEach((link) => {
+      if (!link.classList.contains('burger-menu__dropdown-toggle')) {
+        link.addEventListener('click', closeMenu);
+      }
+    });
+  };
 
   const openMenu = () => {
+    // If for any reason menu content became empty, restore it and rebind handlers
+    const nav = burgerMenu.querySelector('.burger-menu__nav');
+    if (!nav || nav.children.length === 0) {
+      console.warn('Burger menu content missing. Restoring initial markup.');
+      burgerMenu.innerHTML = initialMenuHTML;
+      bindBurgerHandlers();
+    }
     console.log('Opening burger menu');
     burgerMenu.classList.add('is-open');
     burgerToggle.setAttribute('aria-expanded', 'true');
@@ -924,39 +969,8 @@ function setupBurgerMenu() {
     }
   });
 
-  closeTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeMenu();
-    });
-  });
-
-  // Handle burger menu dropdown first
-  const burgerDropdownToggle = burgerMenu.querySelector('.burger-menu__dropdown-toggle');
-  if (burgerDropdownToggle) {
-    burgerDropdownToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isExpanded = burgerDropdownToggle.getAttribute('aria-expanded') === 'true';
-      burgerDropdownToggle.setAttribute('aria-expanded', !isExpanded);
-      console.log('Dropdown toggled. Expanded:', !isExpanded);
-    });
-    
-    // Prevent dropdown content clicks from closing burger menu
-    const dropdownContent = burgerMenu.querySelector('.burger-menu__dropdown-content');
-    if (dropdownContent) {
-      dropdownContent.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
-    }
-  }
-
-  // Close menu only for regular links (not dropdown toggle or dropdown links)
-  menuLinks.forEach((link) => {
-    if (!link.classList.contains('burger-menu__dropdown-toggle')) {
-      link.addEventListener('click', closeMenu);
-    }
-  });
+  // Initial bind for existing DOM
+  bindBurgerHandlers();
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && burgerMenu.classList.contains('is-open')) {
