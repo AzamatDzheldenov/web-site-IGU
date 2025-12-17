@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости | Колледж ИГУ им. Касыма Тыныстанова</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/translations.js"></script>
+  <link rel="stylesheet" href="assets/css/news.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark"><img src="http://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого"></div>
+        <div>
+          <div class="brand-name" data-i18n="brandName">Колледж ИГУ им. Касыма Тыныстанова</div>
+          <div class="brand-sub" data-i18n="brandSub">Каракол, Кыргызстан</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <ul id="nav-links" class="nav-links">
+          <li><a data-i18n="navPrograms" href="index.html#academics">Программы</a></li>
+          <li><a data-i18n="navNews" href="news.html" class="active">Новости</a></li>
+          <li><a data-i18n="navEvents" href="index.html#events">События</a></li>
+          <li class="nav-dropdown">
+            <button class="dropdown-toggle neon-text" aria-expanded="false" aria-haspopup="true" data-i18n="navCampus">Студентам</button>
+            <ul class="dropdown-menu">
+              <li><a data-i18n="navLectures" href="lectures.html">Лекции</a></li>
+              <li><a data-i18n="navSchedule" href="index.html#schedule">Расписание</a></li>
+              <li><a data-i18n="navChat" href="index.html#chat">Чат</a></li>
+            </ul>
+          </li>
+          <li><a class="pill" data-i18n="navApply" href="index.html#apply">Поступить</a></li>
+        </ul>
+        <div class="theme-switch">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Сменить тему">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+        <div class="lang-switch">
+          <label for="lang-select" class="sr-only">Язык</label>
+          <select id="lang-select" class="lang-select" aria-label="Сменить язык">
+            <option value="ru">Рус</option>
+            <option value="ky">Kyr</option>
+            <option value="en">Eng</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+
+  <main class="main">
+    <section class="news-hero section">
+      <div class="container">
+        <h1 class="section__title">Новости</h1>
+        <p class="section__subtitle">Жизнь колледжа</p>
+      </div>
+    </section>
+
+    <!-- Карусель новостей -->
+    <section class="news-slider section">
+      <div class="container">
+        <div class="slider-wrapper">
+          <div class="slider-container" id="news-slider">
+            <!-- Новости будут загружены через JS -->
+          </div>
+          <button class="slider-btn slider-btn-prev" id="slider-prev">‹</button>
+          <button class="slider-btn slider-btn-next" id="slider-next">›</button>
+          <div class="slider-dots" id="slider-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Список всех новостей -->
+    <section class="news-list section">
+      <div class="container">
+        <h2 class="section__title">Все новости</h2>
+        <div class="news-items" id="news-list">
+          <!-- Новости будут загружены через JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Модальное окно для полной новости -->
+  <div class="modal" id="news-modal">
+    <div class="modal-content modal-content-large">
+      <div class="modal-header">
+        <h2 id="news-modal-title">Заголовок новости</h2>
+        <button class="modal-close" id="close-news-modal">×</button>
+      </div>
+      <img id="news-modal-image" src="" alt="" class="news-modal-image">
+      <div class="news-modal-meta" id="news-modal-meta"></div>
+      <div class="news-modal-content" id="news-modal-content"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div>
+      <div class="brand-mark"><img src="http://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого колледжа"></div>
+      <p class="brand-name" data-i18n="footerName">Колледж ИГУ</p>
+      <p class="brand-sub" data-i18n="footerSub">Имени Касыма Тыныстанова, Каракол</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#top" data-i18n="footerTop">Наверх</a>
+      <a href="news.html" data-i18n="footerNews">Новости</a>
+      <a href="index.html#events" data-i18n="footerEvents">События</a>
+      <a href="index.html#academics" data-i18n="footerAcademics">Программы</a>
+    </div>
+    <p class="footer-note" data-i18n="footerNote">Демонстрационный сайт для колледжа ИКГУ им. К. Тыныстанова.</p>
+  </footer>
+</div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/news.js"></script>
+</body>
+</html>

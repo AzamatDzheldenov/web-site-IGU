@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лекции | Колледж ИГУ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark"><img src="http://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого"></div>
+        <div>
+          <div class="brand-name">Колледж ИГУ им. Касыма Тыныстанова</div>
+          <div class="brand-sub">Каракол, Кыргызстан</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html#academics">Программы</a></li>
+          <li><a href="index.html#news">Новости</a></li>
+          <li><a href="index.html#events">События</a></li>
+          <li class="nav-dropdown">
+            <button class="dropdown-toggle neon-text" aria-expanded="false" aria-haspopup="true">Студентам</button>
+            <ul class="dropdown-menu">
+              <li><a href="lectures.html">Лекции</a></li>
+              <li><a href="#schedule">Расписание</a></li>
+              <li><a href="#chat">Чат</a></li>
+            </ul>
+          </li>
+          <li><a class="pill" href="index.html#apply">Поступить</a></li>
+        </ul>
+        <div class="theme-switch">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Сменить тему">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+        <div class="lang-switch">
+          <label for="lang-select" class="sr-only">Язык</label>
+          <select id="lang-select" class="lang-select" aria-label="Сменить язык">
+            <option value="ru">Рус</option>
+            <option value="ky">Kyr</option>
+            <option value="en">Eng</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero__content">
+          <p class="eyebrow">Лекции</p>
+          <h1>Материалы для студентов</h1>
+          <p class="lede">Выберите направление, чтобы перейти к лекциям, видео и статьям по нужной дисциплине.</p>
+          <div class="hero__actions">
+            <a class="btn primary" href="#tracks">Выбрать направление</a>
+            <a class="btn ghost" href="index.html#news">Новости колледжа</a>
+          </div>
+          <div class="hero__meta">
+            <div>
+              <span class="meta-label">Форматы</span>
+              <span class="meta-value">Видео · PDF · Статьи</span>
+            </div>
+            <div>
+              <span class="meta-label">Доступ</span>
+              <span class="meta-value">24/7</span>
+            </div>
+            <div>
+              <span class="meta-label">Языки</span>
+              <span class="meta-value">RU / EN</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="orb orb--crimson"></div>
+          <div class="orb orb--gold"></div>
+          <div class="hero__card">
+            <p class="card-label">Онлайн-лекции</p>
+            <h3>Смотрим, читаем, практикуем</h3>
+            <p>Записи занятий, YouTube и локальные видео, статьи с сайта и загружаемые материалы.</p>
+            <div class="tag-row">
+              <span class="tag">Видео</span>
+              <span class="tag">YouTube</span>
+              <span class="tag">Статьи</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="tracks">
+        <div class="panel__header">
+          <p class="eyebrow">Направления</p>
+          <h2>Выберите направление лекций</h2>
+          <p class="lede">Каждый блок ведёт на страницу с подборкой видео, статей и файлов по дисциплине.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <span class="category">Программирование</span>
+            <h3>Код, алгоритмы, веб</h3>
+            <p>Лекции по языкам, алгоритмам, веб-разработке и практике.</p>
+            <a class="text-link" href="lectures-programming.html">Перейти к материалам →</a>
+          </article>
+          <article class="card">
+            <span class="category">Иностранный язык</span>
+            <h3>Английский для учёбы и работы</h3>
+            <p>Видео-уроки, упражнения, тексты и аудио.</p>
+            <a class="text-link" href="lectures-language.html">Перейти к материалам →</a>
+          </article>
+          <article class="card">
+            <span class="category">Начальная военная подготовка</span>
+            <h3>Основы НВП</h3>
+            <p>Статьи, видео и инструкции по безопасности и строевой подготовке.</p>
+            <a class="text-link" href="lectures-nvp.html">Перейти к материалам →</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <div class="brand-mark"><img src="http://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого колледжа"></div>
+        <p class="brand-name">Колледж ИГУ</p>
+        <p class="brand-sub">Имени Касыма Тыныстанова, Каракол</p>
+      </div>
+      <div class="footer-links">
+        <a href="lectures.html">Лекции</a>
+        <a href="index.html#events">События</a>
+        <a href="index.html#academics">Программы</a>
+      </div>
+      <p class="footer-note">Демонстрационный сайт для колледжа ИКГУ им. К. Тыныстанова.</p>
+    </footer>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

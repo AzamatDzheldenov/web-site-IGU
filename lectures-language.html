@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Иностранный язык — Лекции | Колледж ИГУ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/lectures.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark"><img src="http://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого"></div>
+        <div>
+          <div class="brand-name">Колледж ИГУ им. Касыма Тыныстанова</div>
+          <div class="brand-sub">Каракол, Кыргызстан</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html#academics">Программы</a></li>
+          <li><a href="index.html#news">Новости</a></li>
+          <li><a href="index.html#events">События</a></li>
+          <li class="nav-dropdown">
+            <button class="dropdown-toggle neon-text" aria-expanded="false" aria-haspopup="true">Студентам</button>
+            <ul class="dropdown-menu">
+              <li><a href="lectures.html">Лекции</a></li>
+              <li><a href="#schedule">Расписание</a></li>
+              <li><a href="#chat">Чат</a></li>
+            </ul>
+          </li>
+          <li><a class="pill" href="index.html#apply">Поступить</a></li>
+        </ul>
+        <div class="theme-switch">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Сменить тему">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+        <div class="lang-switch">
+          <label for="lang-select" class="sr-only">Язык</label>
+          <select id="lang-select" class="lang-select" aria-label="Сменить язык">
+            <option value="ru">Рус</option>
+            <option value="ky">Kyr</option>
+            <option value="en">Eng</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero__content">
+          <p class="eyebrow">Иностранный язык</p>
+          <h1>Материалы по иностранным языкам</h1>
+          <p class="lede">Видео-уроки, аудиозаписи, грамматические материалы и тексты для изучения английского, немецкого и французского языков.</p>
+          <div class="hero__actions">
+            <a class="btn primary" href="#videos">Видео-уроки</a>
+            <a class="btn ghost" href="#articles">Материалы</a>
+          </div>
+          <div class="hero__meta">
+            <div>
+              <span class="meta-label">Видео</span>
+              <span class="meta-value" id="video-count">15</span>
+            </div>
+            <div>
+              <span class="meta-label">Материалы</span>
+              <span class="meta-value" id="article-count">12</span>
+            </div>
+            <div>
+              <span class="meta-label">Документы</span>
+              <span class="meta-value" id="doc-count">18</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="orb orb--crimson"></div>
+          <div class="orb orb--gold"></div>
+          <div class="hero__card">
+            <p class="card-label">Изучаемые языки</p>
+            <h3>English · Deutsch · Français</h3>
+            <p>От базовой грамматики до свободного общения и делового языка.</p>
+            <div class="tag-row">
+              <span class="tag">Грамматика</span>
+              <span class="tag">Лексика</span>
+              <span class="tag">Разговорная речь</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Информационный баннер -->
+      <div class="info-banner">
+        <div class="info-banner-icon">�</div>
+        <div class="info-banner-content">
+          <h3>Как работают плейлисты?</h3>
+          <p>Создавайте плейлисты и добавляйте в них видео, статьи и документы. При добавлении контента выберите нужный плейлист из выпадающего списка. Все материалы будут организованы и доступны при открытии плейлиста.</p>
+        </div>
+      </div>
+
+      <!-- Плейлисты -->
+      <section class="panel" id="playlists">
+        <div class="panel__header">
+          <p class="eyebrow">Плейлисты</p>
+          <h2>Организация материалов</h2>
+          <p class="lede">Создавайте тематические плейлисты для структурированного изучения языков.</p>
+          <button class="btn primary" id="add-playlist-btn">+ Создать плейлист</button>
+        </div>
+        <div class="playlist-grid" id="playlist-grid">
+          <!-- Плейлисты будут добавляться динамически -->
+          <article class="playlist-card" data-playlist-id="1">
+            <div class="playlist-header">
+              <div class="playlist-icon">🇬🇧</div>
+              <span class="playlist-count">4 видео</span>
+            </div>
+            <h3>Английский для начинающих</h3>
+            <p>Базовая грамматика, фонетика и лексика английского языка.</p>
+            <button class="text-link playlist-view" data-playlist-id="1">Открыть плейлист →</button>
+          </article>
+
+          <article class="playlist-card" data-playlist-id="2">
+            <div class="playlist-header">
+              <div class="playlist-icon">🗣️</div>
+              <span class="playlist-count">6 видео</span>
+            </div>
+            <h3>Разговорная практика</h3>
+            <p>Диалоги, ролевые игры и практика устной речи на английском.</p>
+            <button class="text-link playlist-view" data-playlist-id="2">Открыть плейлист →</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Видео-уроки -->
+      <section class="panel" id="videos">
+        <div class="panel__header">
+          <p class="eyebrow">Видео</p>
+          <h2>Видео-уроки и записи</h2>
+          <p class="lede">Уроки грамматики, разговорной практики и аудирования.</p>
+          <button class="btn primary" id="add-video-btn">+ Добавить видео</button>
+        </div>
+        <div class="video-grid" id="video-grid">
+          <!-- Видео будут добавляться динамически -->
+          <article class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <span class="category">YouTube</span>
+              <h3>Present Simple: правила и примеры</h3>
+              <p>Подробный разбор времени Present Simple с примерами и упражнениями.</p>
+              <p class="meta">Длительность: 35 мин · Загружено: 11 дек 2025</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <span class="category">YouTube</span>
+              <h3>Фразовые глаголы в английском</h3>
+              <p>100 самых употребляемых фразовых глаголов с примерами использования.</p>
+              <p class="meta">Длительность: 50 мин · Загружено: 9 дек 2025</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-thumbnail">
+              <video controls>
+                <source src="assets/videos/sample.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+              </video>
+            </div>
+            <div class="video-info">
+              <span class="category">Локальное видео</span>
+              <h3>Английские времена: обзор</h3>
+              <p>Полный обзор всех времён английского языка с таблицей и примерами.</p>
+              <p class="meta">Длительность: 40 мин · Загружено: 7 дек 2025</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Материалы -->
+      <section class="panel" id="articles">
+        <div class="panel__header">
+          <p class="eyebrow">Материалы</p>
+          <h2>Грамматика и лексика</h2>
+          <p class="lede">Грамматические справочники, списки слов и упражнения.</p>
+          <button class="btn primary" id="add-article-btn">+ Написать материал</button>
+        </div>
+        <div class="article-list" id="article-list">
+          <article class="article-card">
+            <div class="article-header">
+              <span class="category">Английский</span>
+              <p class="meta">12 дек 2025 · Автор: Смирнова Е.И.</p>
+            </div>
+            <h3>Неправильные глаголы: полный список</h3>
+            <p class="article-excerpt">Таблица всех неправильных глаголов английского языка с транскрипцией и переводом. Рекомендации по запоминанию...</p>
+            <a class="text-link" href="#article-1">Читать полностью →</a>
+          </article>
+
+          <article class="article-card">
+            <div class="article-header">
+              <span class="category">Грамматика</span>
+              <p class="meta">10 дек 2025 · Автор: Иванов П.С.</p>
+            </div>
+            <h3>Артикли a/an/the: когда и как использовать</h3>
+            <p class="article-excerpt">Подробное объяснение правил использования артиклей в английском языке с примерами из живой речи...</p>
+            <a class="text-link" href="#article-2">Читать полностью →</a>
+          </article>
+
+          <article class="article-card">
+            <div class="article-header">
+              <span class="category">Лексика</span>
+              <p class="meta">8 дек 2025 · Автор: Петрова А.В.</p>
+            </div>
+            <h3>1000 самых важных слов английского языка</h3>
+            <p class="article-excerpt">Список базовых слов для начинающих, разделённых по темам: семья, работа, путешествия, еда, хобби...</p>
+            <a class="text-link" href="#article-3">Читать полностью →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Документы и учебники -->
+      <section class="panel accent" id="documents">
+        <div class="panel__header">
+          <p class="eyebrow">Документы</p>
+          <h2>Учебники и справочники</h2>
+          <p class="lede">PDF-учебники, грамматические таблицы и методические материалы.</p>
+          <button class="btn primary" id="add-doc-btn">+ Загрузить документ</button>
+        </div>
+        <div class="doc-grid" id="doc-grid">
+          <article class="doc-card">
+            <div class="doc-icon">📘</div>
+            <div class="doc-info">
+              <span class="category">Учебник PDF</span>
+              <h3>English Grammar in Use</h3>
+              <p>Классический учебник грамматики английского языка Рэймонда Мёрфи.</p>
+              <a class="text-link" href="#" download>Скачать (5.2 МБ) →</a>
+            </div>
+          </article>
+
+          <article class="doc-card">
+            <div class="doc-icon">📊</div>
+            <div class="doc-info">
+              <span class="category">Таблицы</span>
+              <h3>Таблица времён английского языка</h3>
+              <p>Сводная таблица всех времён с формулами образования и примерами.</p>
+              <a class="text-link" href="#" download>Скачать (800 КБ) →</a>
+            </div>
+          </article>
+
+          <article class="doc-card">
+            <div class="doc-icon">📗</div>
+            <div class="doc-info">
+              <span class="category">Словарь PDF</span>
+              <h3>Англо-русский словарь (20000 слов)</h3>
+              <p>Базовый словарь для студентов с транскрипцией и примерами.</p>
+              <a class="text-link" href="#" download>Скачать (2.8 МБ) →</a>
+            </div>
+          </article>
+
+          <article class="doc-card">
+            <div class="doc-icon">🎧</div>
+            <div class="doc-info">
+              <span class="category">Аудио</span>
+              <h3>Аудиокурс для начинающих</h3>
+              <p>50 аудио-уроков для развития навыков аудирования и произношения.</p>
+              <a class="text-link" href="#" download>Скачать (120 МБ) →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Модальные окна (те же, что и в programming) -->
+      <div class="modal" id="video-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Добавить видео</h2>
+            <button class="modal-close" id="close-video-modal">×</button>
+          </div>
+          <form id="video-form">
+            <div class="form-group">
+              <label for="video-title">Название видео</label>
+              <input type="text" id="video-title" placeholder="Present Simple: правила" required>
+            </div>
+            <div class="form-group">
+              <label for="video-desc">Описание</label>
+              <textarea id="video-desc" rows="3" placeholder="Краткое описание видео"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Тип видео</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="video-type" value="youtube" checked>
+                  YouTube видео
+                </label>
+                <label>
+                  <input type="radio" name="video-type" value="local">
+                  Локальное видео
+                </label>
+                <label>
+                  <input type="radio" name="video-type" value="youtube-playlist">
+                  YouTube плейлист
+                </label>
+              </div>
+            </div>
+            <div class="form-group" id="youtube-url-group">
+              <label for="youtube-url">YouTube URL</label>
+              <input type="url" id="youtube-url" placeholder="https://www.youtube.com/watch?v=...">
+            </div>
+            <div class="form-group" id="youtube-playlist-group" style="display: none;">
+              <label for="youtube-playlist-url">YouTube Playlist URL</label>
+              <input type="url" id="youtube-playlist-url" placeholder="https://www.youtube.com/playlist?list=...">
+              <p class="form-hint">Все видео из плейлиста будут добавлены в выбранный плейлист</p>
+            </div>
+            <div class="form-group" id="video-file-group" style="display: none;">
+              <label for="video-file">Файл видео</label>
+              <input type="file" id="video-file" accept="video/*">
+            </div>
+            <div class="form-group">
+              <label for="video-duration">Длительность (мин)</label>
+              <input type="number" id="video-duration" placeholder="35">
+            </div>
+            <div class="form-group">
+              <label for="video-playlist">📁 Добавить в плейлист (опционально)</label>
+              <select id="video-playlist" class="playlist-select">
+                <option value="">Без плейлиста</option>
+              </select>
+              <p class="form-hint">� Видео, добавленные в плейлист, будут отображаться при его открытии</p>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn ghost" id="cancel-video">Отмена</button>
+              <button type="submit" class="btn primary">Добавить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="article-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Написать материал</h2>
+            <button class="modal-close" id="close-article-modal">×</button>
+          </div>
+          <form id="article-form">
+            <div class="form-group">
+              <label for="article-title">Заголовок</label>
+              <input type="text" id="article-title" placeholder="Неправильные глаголы" required>
+            </div>
+            <div class="form-group">
+              <label for="article-category">Категория</label>
+              <select id="article-category">
+                <option value="Английский">Английский</option>
+                <option value="Немецкий">Немецкий</option>
+                <option value="Французский">Французский</option>
+                <option value="Грамматика">Грамматика</option>
+                <option value="Лексика">Лексика</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="article-author">Автор</label>
+              <input type="text" id="article-author" placeholder="Смирнова Е.И." required>
+            </div>
+            <div class="form-group">
+              <label for="article-excerpt">Краткое описание</label>
+              <textarea id="article-excerpt" rows="3" placeholder="Краткое содержание материала"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="article-content">Полный текст</label>
+              <textarea id="article-content" rows="10" placeholder="Напишите материал здесь..."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn ghost" id="cancel-article">Отмена</button>
+              <button type="submit" class="btn primary">Опубликовать</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Модальное окно для просмотра статьи -->
+      <div class="modal" id="article-view-modal">
+        <div class="modal-content modal-content-large">
+          <div class="modal-header">
+            <h2 id="article-view-title">Статья</h2>
+            <button class="modal-close" id="close-article-view-modal">×</button>
+          </div>
+          <div class="article-view-meta" id="article-view-meta" style="color: var(--text-secondary); margin-bottom: 12px;"></div>
+          <div class="article-view-content" id="article-view-content" style="white-space: pre-wrap; line-height: 1.7;"></div>
+        </div>
+      </div>
+
+      <div class="modal" id="playlist-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Создать плейлист</h2>
+            <button class="modal-close" id="close-playlist-modal">×</button>
+          </div>
+          <form id="playlist-form">
+            <div class="form-group">
+              <label for="playlist-title">Название плейлиста</label>
+              <input type="text" id="playlist-title" placeholder="Английский для начинающих" required>
+            </div>
+            <div class="form-group">
+              <label for="playlist-desc">Описание</label>
+              <textarea id="playlist-desc" rows="3" placeholder="Краткое описание плейлиста" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="playlist-icon">Иконка</label>
+              <select id="playlist-icon">
+                <option value="🇬🇧">🇬🇧 Английский</option>
+                <option value="🇩🇪">🇩🇪 Немецкий</option>
+                <option value="🇫🇷">🇫🇷 Французский</option>
+                <option value="📚">📚 Книги</option>
+                <option value="🗣️">🗣️ Разговор</option>
+                <option value="📝">📝 Письмо</option>
+                <option value="🎧">🎧 Аудирование</option>
+                <option value="📖">📖 Чтение</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="playlist-videos">YouTube видео (по одной ссылке на строку)</label>
+              <textarea id="playlist-videos" rows="6" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ&#10;https://www.youtube.com/watch?v=example123&#10;https://www.youtube.com/watch?v=sample456"></textarea>
+              <p class="form-hint">� Вставьте ссылки на YouTube видео, каждая с новой строки</p>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn ghost" id="cancel-playlist">Отмена</button>
+              <button type="submit" class="btn primary">Создать плейлист</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="playlist-view-modal">
+        <div class="modal-content modal-content-large">
+          <div class="modal-header">
+            <h2 id="playlist-view-title">Название плейлиста</h2>
+            <button class="modal-close" id="close-playlist-view-modal">×</button>
+          </div>
+          <p id="playlist-view-desc" class="playlist-view-desc"></p>
+          <div class="playlist-videos-grid" id="playlist-view-videos">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="video-player-modal">
+        <div class="modal-content modal-content-large">
+          <div class="modal-header">
+            <h2 id="video-player-title">Видео</h2>
+            <button class="modal-close" id="close-video-player-modal">×</button>
+          </div>
+          <div class="video-player-container">
+            <iframe id="video-player-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-player-error" id="video-player-error" style="display: none;">
+              <p>⚠️ Это видео не может быть встроено</p>
+              <p style="font-size: 14px; margin-top: 8px;">Некоторые видео YouTube запрещают встраивание</p>
+              <a id="video-player-youtube-link" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top: 16px; display: inline-block;">🔗 Открыть на YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="doc-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Загрузить документ</h2>
+            <button class="modal-close" id="close-doc-modal">×</button>
+          </div>
+          <form id="doc-form">
+            <div class="form-group">
+              <label for="doc-title">Название документа</label>
+              <input type="text" id="doc-title" placeholder="English Grammar in Use" required>
+            </div>
+            <div class="form-group">
+              <label for="doc-type">Тип документа</label>
+              <select id="doc-type">
+                <option value="Учебник PDF">Учебник PDF</option>
+                <option value="Таблицы">Таблицы</option>
+                <option value="Словарь PDF">Словарь PDF</option>
+                <option value="Аудио">Аудио</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="doc-desc">Описание</label>
+              <textarea id="doc-desc" rows="3" placeholder="Краткое описание документа"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="doc-file">Файл документа</label>
+              <input type="file" id="doc-file" accept=".pdf,.ppt,.pptx,.doc,.docx,.mp3,.wav" required>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn ghost" id="cancel-doc">Отмена</button>
+              <button type="submit" class="btn primary">Загрузить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <div class="brand-mark"><img src="http://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого колледжа"></div>
+        <p class="brand-name">Колледж ИГУ</p>
+        <p class="brand-sub">Имени Касыма Тыныстанова, Каракол</p>
+      </div>
+      <div class="footer-links">
+        <a href="lectures.html">Лекции</a>
+        <a href="index.html#events">События</a>
+        <a href="index.html#academics">Программы</a>
+      </div>
+      <p class="footer-note">Демонстрационный сайт для колледжа ИКГУ им. К. Тыныстанова.</p>
+    </footer>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/lectures-language.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Нормативно-правовые документы | Колледж ИГУ им. Касыма Тыныстанова</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/translations.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark"><img src="http://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого"></div>
+        <div>
+          <div class="brand-name" data-i18n="brandName">Колледж ИГУ им. Касыма Тыныстанова</div>
+          <div class="brand-sub" data-i18n="brandSub">Каракол, Кыргызстан</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <ul id="nav-links" class="nav-links">
+          <li><a data-i18n="navPrograms" href="index.html#academics">Программы</a></li>
+          <li><a data-i18n="navNews" href="news.html">Новости</a></li>
+          <li><a data-i18n="navEvents" href="index.html#events">События</a></li>
+          <li class="nav-dropdown">
+            <button class="dropdown-toggle neon-text" aria-expanded="false" aria-haspopup="true" data-i18n="navCampus">Студентам</button>
+            <ul class="dropdown-menu">
+              <li><a data-i18n="navLectures" href="lectures.html">Лекции</a></li>
+              <li><a data-i18n="navSchedule" href="index.html#schedule">Расписание</a></li>
+              <li><a data-i18n="navChat" href="index.html#chat">Чат</a></li>
+            </ul>
+          </li>
+          <li><a class="pill" data-i18n="navApply" href="index.html#apply">Поступить</a></li>
+        </ul>
+        <div class="theme-switch">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Сменить тему">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+        <div class="lang-switch">
+          <label for="lang-select" class="sr-only">Язык</label>
+          <select id="lang-select" class="lang-select" aria-label="Сменить язык">
+            <option value="ru">Рус</option>
+            <option value="ky">Kyr</option>
+            <option value="en">Eng</option>
+          </select>
+        </div>
+        <button class="burger-menu-toggle" id="burger-toggle" aria-expanded="false" aria-label="Дополнительное меню">
+          <span class="burger-icon"></span>
+          <span class="burger-icon"></span>
+          <span class="burger-icon"></span>
+        </button>
+      </nav>
+    </header>
+    
+    <!-- Бургер меню -->
+    <div class="burger-menu" id="burger-menu" aria-hidden="true">
+      <div class="burger-menu__backdrop" data-burger-close></div>
+      <div class="burger-menu__content">
+        <div class="burger-menu__header">
+          <h3>Меню</h3>
+          <button class="burger-menu__close" data-burger-close aria-label="Закрыть меню">×</button>
+        </div>
+        <nav class="burger-menu__nav">
+          <a href="mission.html" class="burger-menu__link">
+            <span class="burger-menu__icon">🎯</span>
+            Миссия колледжа
+          </a>
+          <a href="buildings.html" class="burger-menu__link">
+            <span class="burger-menu__icon">�</span>
+            Корпуса
+          </a>
+          <a href="director.html" class="burger-menu__link">
+            <span class="burger-menu__icon">👤</span>
+            Обращение директора
+          </a>
+          <a href="#committees" class="burger-menu__link">
+            <span class="burger-menu__icon">👥</span>
+            Состав ПЦК
+          </a>
+          <a href="documents.html" class="burger-menu__link">
+            <span class="burger-menu__icon">📄</span>
+            Нормативно-правовые документы
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <section class="documents-hero section">
+        <div class="container">
+          <div class="documents-hero__header">
+            <span class="eyebrow" data-i18n="documentsEyebrow">Официальные документы</span>
+            <h1 data-i18n="documentsTitle">Нормативно-правовые документы</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="documents-content section">
+        <div class="container">
+          <div class="documents-grid">
+            <div class="document-card">
+              <div class="document-card__header">
+                <span class="document-card__icon">📋</span>
+                <h3>Положения</h3>
+              </div>
+              <p class="document-card__desc">Основные положения и правила</p>
+              <div class="document-card__files" data-category="positive">
+                <div class="document-empty">Документы не загружены</div>
+              </div>
+            </div>
+
+            <div class="document-card">
+              <div class="document-card__header">
+                <span class="document-card__icon">�</span>
+                <h3>Лицензии</h3>
+              </div>
+              <p class="document-card__desc">Образовательные лицензии</p>
+              <div class="document-card__files" data-category="licenses">
+                <div class="document-empty">Документы не загружены</div>
+              </div>
+            </div>
+
+            <div class="document-card">
+              <div class="document-card__header">
+                <span class="document-card__icon">✔️</span>
+                <h3>Сертификаты</h3>
+              </div>
+              <p class="document-card__desc">Сертификаты аккредитации</p>
+              <div class="document-card__files" data-category="certificates">
+                <div class="document-empty">Документы не загружены</div>
+              </div>
+            </div>
+
+            <div class="document-card">
+              <div class="document-card__header">
+                <span class="document-card__icon">🎓</span>
+                <h3>Образовательные программы</h3>
+              </div>
+              <p class="document-card__desc">Учебные программы и планы</p>
+              <div class="document-card__files" data-category="programs">
+                <div class="document-empty">Документы не загружены</div>
+              </div>
+            </div>
+
+            <div class="document-card">
+              <div class="document-card__header">
+                <span class="document-card__icon">📆</span>
+                <h3>План работы</h3>
+              </div>
+              <p class="document-card__desc">Годовой и семестровый план</p>
+              <div class="document-card__files" data-category="plans">
+                <div class="document-empty">Документы не загружены</div>
+              </div>
+            </div>
+
+            <div class="document-card">
+              <div class="document-card__header">
+                <span class="document-card__icon">🤝</span>
+                <h3>Меморандумы</h3>
+              </div>
+              <p class="document-card__desc">Соглашения и меморандумы</p>
+              <div class="document-card__files" data-category="memoranda">
+                <div class="document-empty">Документы не загружены</div>
+              </div>
+            </div>
+
+            <div class="document-card">
+              <div class="document-card__header">
+                <span class="document-card__icon">💭</span>
+                <h3>Концепция</h3>
+              </div>
+              <p class="document-card__desc">Концепция развития колледжа</p>
+              <div class="document-card__files" data-category="concept">
+                <div class="document-empty">Документы не загружены</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <div class="brand-mark"><img src="http://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого колледжа"></div>
+        <p class="brand-name" data-i18n="footerName">Колледж ИГУ</p>
+        <p class="brand-sub" data-i18n="footerSub">Имени Касыма Тыныстанова, Каракол</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#top" data-i18n="footerTop">Наверх</a>
+        <a href="news.html" data-i18n="footerNews">Новости</a>
+        <a href="index.html#events" data-i18n="footerEvents">События</a>
+        <a href="index.html#academics" data-i18n="footerAcademics">Программы</a>
+      </div>
+      <p class="footer-note" data-i18n="footerNote">Демонстрационный сайт для колледжа ИКГУ им. К. Тыныстанова.</p>
+    </footer>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/documents.js"></script>
+  <script src="assets/js/documents-examples.js"></script>
+</body>
+</html>
