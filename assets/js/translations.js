@@ -24,16 +24,16 @@ const allTranslations = {
     
     // Главная страница
     heroEyebrow: 'Колледж ИГУ',
-    heroTitle: 'Образование у берегов Иссык-Куля',
+    heroTitle: 'Образование в Караколе',
     heroLead: 'Государственный колледж Иссык-Кульского государственного университета имени Касыма Тыныстанова в Караколе. Прикладные программы, практика и поддержка студентов.',
     heroPrimary: 'Поступить и посетить',
     heroSecondary: 'Свежие новости',
     
     // Метрики
     metaProgramsLabel: 'Программ подготовки',
-    metaProgramsValue: '16',
+    metaProgramsValue: '21',
     metaStudentsLabel: 'Студентов',
-    metaStudentsValue: '2500+',
+    metaStudentsValue: '1130',
     metaCityLabel: 'Город',
     metaCityValue: 'Каракол',
     
@@ -165,16 +165,16 @@ const allTranslations = {
     
     // Басты бет
     heroEyebrow: 'ЫКМУ колледжи',
-    heroTitle: 'Ысык-Көл жээгинде билим',
+    heroTitle: 'Караколда билим',
     heroLead: 'Каракол шаарындагы К. Тыныстанов атындагы Ысык-Көл мамлекеттик университетинин колледжи. Практикалык программалар, өндүрүштүк практика жана студенттик колдоо.',
     heroPrimary: 'Кабыл алуу жана визит',
     heroSecondary: 'Жаңы жаңылыктарды көрүү',
     
     // Метрикалар
     metaProgramsLabel: 'Программалар',
-    metaProgramsValue: '16',
+    metaProgramsValue: '21',
     metaStudentsLabel: 'Студенттер',
-    metaStudentsValue: '2500+',
+    metaStudentsValue: '1130',
     metaCityLabel: 'Шаар',
     metaCityValue: 'Каракол',
     
@@ -306,16 +306,16 @@ const allTranslations = {
     
     // Home page
     heroEyebrow: 'IKGU College',
-    heroTitle: 'Education on the Shores of Issyk-Kul',
+    heroTitle: 'Education in Karakol',
     heroLead: 'A state college of Issyk-Kul State University named after Kasym Tynystayev in Karakol. Applied programs, internships and student support.',
     heroPrimary: 'Apply and Visit',
     heroSecondary: 'Latest News',
     
     // Metrics
     metaProgramsLabel: 'Training Programs',
-    metaProgramsValue: '16',
+    metaProgramsValue: '21',
     metaStudentsLabel: 'Students',
-    metaStudentsValue: '2500+',
+    metaStudentsValue: '1130',
     metaCityLabel: 'City',
     metaCityValue: 'Karakol',
     

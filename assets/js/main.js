@@ -12,14 +12,14 @@ const translations = (typeof allTranslations !== 'undefined') ? allTranslations 
     navChat: 'Чат',
     navApply: 'Поступить',
     heroEyebrow: 'Колледж ИГУ',
-    heroTitle: 'Образование у берегов Иссык-Куля',
+    heroTitle: 'Образование в Караколе',
     heroLead: 'Государственный колледж Иссык-Кульского государственного университета имени Касыма Тыныстанова в Караколе. Прикладные программы, практика и поддержка студентов.',
     heroPrimary: 'Поступить и посетить',
     heroSecondary: 'Свежие новости',
     metaProgramsLabel: 'Программ подготовки',
-    metaProgramsValue: '16',
+    metaProgramsValue: '21',
     metaStudentsLabel: 'Студентов',
-    metaStudentsValue: '2500+',
+    metaStudentsValue: '1130',
     metaCityLabel: 'Город',
     metaCityValue: 'Каракол',
     cardLabel: 'О колледже',
@@ -95,14 +95,14 @@ const translations = (typeof allTranslations !== 'undefined') ? allTranslations 
     navChat: 'Чат',
     navApply: 'Кабыл алуу',
     heroEyebrow: 'ЫКМУ колледжи',
-    heroTitle: 'Билим Ысык-Көл жээгинде',
+    heroTitle: 'Караколда билим',
     heroLead: 'Каракол шаарындагы К. Тыныстанов атындагы Ысык-Көл мамлекеттик университетинин колледжи. Практикалык программалар, өндүрүштүк практика жана студенттик колдоо.',
     heroPrimary: 'Кабыл алуу жана визит',
     heroSecondary: 'Жаңылыктарды көрүү',
     metaProgramsLabel: 'Программалар',
-    metaProgramsValue: '16',
+    metaProgramsValue: '21',
     metaStudentsLabel: 'Студенттер',
-    metaStudentsValue: '2500+',
+    metaStudentsValue: '1130',
     metaCityLabel: 'Шаар',
     metaCityValue: 'Каракол',
     cardLabel: 'Колледж тууралуу',
@@ -178,14 +178,14 @@ const translations = (typeof allTranslations !== 'undefined') ? allTranslations 
     navChat: 'Chat',
     navApply: 'Apply',
     heroEyebrow: 'IKSU College',
-    heroTitle: 'Education on the shores of Issyk-Kul',
+    heroTitle: 'Education in Karakol',
     heroLead: 'State college of Issyk-Kul State University named after Kasym Tynystanov in Karakol. Applied programs, practice, and student support.',
     heroPrimary: 'Apply & Visit',
     heroSecondary: 'Latest news',
     metaProgramsLabel: 'Programs',
-    metaProgramsValue: '16',
+    metaProgramsValue: '21',
     metaStudentsLabel: 'Students',
-    metaStudentsValue: '2500+',
+    metaStudentsValue: '1130',
     metaCityLabel: 'City',
     metaCityValue: 'Karakol',
     cardLabel: 'About the college',
@@ -399,6 +399,24 @@ function initDOMElements() {
   langSelect = document.getElementById('lang-select');
 }
 
+function setupBrandLink() {
+  const brand = document.querySelector('.brand');
+  if (!brand) return;
+
+  const goHome = () => { window.location.href = 'index.html'; };
+  brand.setAttribute('role', 'link');
+  brand.setAttribute('tabindex', '0');
+  brand.style.cursor = 'pointer';
+
+  brand.addEventListener('click', goHome);
+  brand.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      goHome();
+    }
+  });
+}
+
 function createNewsCard(item) {
   const card = document.createElement('article');
   card.className = 'card';
@@ -509,11 +527,17 @@ function renderCampus(lang) {
 }
 
 function renderCtaList(lang) {
-  if (!ctaList) return;
+  if (!ctaList) {
+    console.warn('ctaList element not found');
+    return;
+  }
   ctaList.innerHTML = '';
   const list = (translations[lang] && Array.isArray(translations[lang].ctaList))
     ? translations[lang].ctaList
     : (translations.ru && Array.isArray(translations.ru.ctaList)) ? translations.ru.ctaList : [];
+  
+  console.log('Rendering ctaList:', list);
+  
   list.forEach((item) => {
     const li = document.createElement('li');
     li.textContent = item;
@@ -689,15 +713,9 @@ function setupThemeToggle() {
   
   if (!themeToggle) return;
   
-  // Load saved theme or detect system preference
-  let savedTheme = localStorage.getItem('theme');
-  if (!savedTheme) {
-    // Check system preference
-    savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  
-  htmlElement.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
+  // Theme is already applied by inline script in <head>, just update icon
+  const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
+  updateThemeIcon(currentTheme);
   
   // Use throttle for theme toggle to prevent multiple rapid toggles
   const handleThemeToggle = throttle(() => {
@@ -737,7 +755,7 @@ function setupTestimonialsReveal() {
           observer.unobserve(entry.target); // Stop observing after visible
         }
       });
-    }, { threshold: 0.35 });
+    }, { threshold: 0.1, rootMargin: '0px 0px 100px 0px' });
 
     cards.forEach((card) => observer.observe(card));
   }
@@ -777,17 +795,24 @@ function setupRevealAnimations() {
   const elements = selectors.flatMap((sel) => Array.from(document.querySelectorAll(sel)));
   if (!elements.length) return;
 
+  // Adapt settings for mobile devices
+  const isMobile = window.innerWidth <= 760;
+  const observerOptions = {
+    threshold: isMobile ? 0.02 : 0.05,
+    rootMargin: isMobile ? '0px 0px 100px 0px' : '0px 0px 50px 0px'
+  };
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        // Slight delay for smoother staggered animation
+        requestAnimationFrame(() => {
+          entry.target.classList.add('is-visible');
+        });
         observer.unobserve(entry.target); // Stop observing once visible
       }
     });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -10% 0px'
-  });
+  }, observerOptions);
 
   elements.forEach((el) => {
     el.classList.add('reveal');
@@ -942,6 +967,7 @@ function setupBurgerMenu() {
 
 function init() {
   initDOMElements();
+  setupBrandLink();
   const savedLang = localStorage.getItem('preferredLanguage');
   const defaultLang = (savedLang && translations[savedLang]) ? savedLang : 'ru';
   applyTranslations(defaultLang);

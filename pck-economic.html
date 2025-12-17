@@ -11,7 +11,7 @@
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Корпуса | Колледж ИГУ им. Касыма Тыныстанова</title>
+  <title>ПЦК социально-экономических дисциплин | Колледж ИГУ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
         </button>
       </nav>
     </header>
-    
+
     <!-- Бургер меню -->
     <div class="burger-menu" id="burger-menu" aria-hidden="true">
       <div class="burger-menu__backdrop" data-burger-close></div>
@@ -79,17 +79,28 @@
             Миссия колледжа
           </a>
           <a href="buildings.html" class="burger-menu__link">
-            <span class="burger-menu__icon">�</span>
+            <span class="burger-menu__icon">🏢</span>
             Корпуса
           </a>
           <a href="director.html" class="burger-menu__link">
             <span class="burger-menu__icon">👤</span>
             Обращение директора
           </a>
-          <a href="#committees" class="burger-menu__link">
-            <span class="burger-menu__icon">👥</span>
-            Состав ПЦК
-          </a>
+          <div class="burger-menu__dropdown">
+            <button class="burger-menu__link burger-menu__dropdown-toggle" aria-expanded="false">
+              <span class="burger-menu__icon">👥</span>
+              Состав ПЦК
+              <span class="burger-menu__arrow">▼</span>
+            </button>
+            <div class="burger-menu__dropdown-content">
+              <a href="pck-natural-math.html" class="burger-menu__dropdown-link">ПЦК Естественно-математических и технических дисциплин</a>
+              <a href="pck-secondary.html" class="burger-menu__dropdown-link">ПЦК общего среднего образования</a>
+              <a href="pck-humanitarian.html" class="burger-menu__dropdown-link">ПЦК общих гуманитарных и педагогических дисциплин</a>
+              <a href="pck-economic.html" class="burger-menu__dropdown-link">ПЦК социально-экономических дисциплин</a>
+              <a href="pck-it.html" class="burger-menu__dropdown-link">ПЦК Информационных технологий</a>
+              <a href="pck-languages.html" class="burger-menu__dropdown-link">ПЦК Иностранных языков</a>
+            </div>
+          </div>
           <a href="documents.html" class="burger-menu__link">
             <span class="burger-menu__icon">📄</span>
             Нормативно-правовые документы
@@ -99,88 +110,65 @@
     </div>
 
     <main>
-      <section class="buildings-hero section">
-        <div class="container">
-          <div class="buildings-hero__header">
-            <span class="eyebrow" data-i18n="buildingsEyebrow">Инфраструктура</span>
-            <h1 data-i18n="buildingsTitle">Наши корпуса</h1>
-          </div>
+      <section class="pck-section">
+        <div class="pck-hero">
+          <h1 class="pck-title">ПЦК социально-экономических дисциплин</h1>
+          <p class="pck-subtitle">Преподавательский состав</p>
         </div>
-      </section>
 
-      <section class="buildings-content section">
-        <div class="container">
-          <div class="buildings-grid">
-            <div class="building-card">
-              <div class="building-card__image">
-                <img src="assets/images/buildings/first.jpg" alt="Первый корпус">
-              </div>
-              <div class="building-card__content">
-                <h3>Первый корпус</h3>
-                <p class="building-card__address">Улица Тыныстанова, 26</p>
-              </div>
-            </div>
-
-            <div class="building-card">
-              <div class="building-card__image">
-                <img src="assets/images/buildings/second.jpg" alt="Второй корпус">
-              </div>
-              <div class="building-card__content">
-                <h3>Второй корпус</h3>
-                <p class="building-card__address">Улица Абдрахманова, 103</p>
-              </div>
-            </div>
-
-            <div class="building-card">
-              <div class="building-card__image">
-                <img src="assets/images/buildings/third.jpg" alt="Третий корпус">
-              </div>
-              <div class="building-card__content">
-                <h3>Третий корпус</h3>
-                <p class="building-card__address">Улица Гебзе, 120</p>
-              </div>
-            </div>
-
-            <div class="building-card">
-              <div class="building-card__image">
-                <img src="assets/images/buildings/fourth.jpg" alt="Четвертый корпус">
-              </div>
-              <div class="building-card__content">
-                <h3>Четвертый корпус</h3>
-                <p class="building-card__address">Улица Абдрахманова, 130</p>
-              </div>
-            </div>
+        <div class="pck-grid">
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
           </div>
-        </div>
-      </section>
-
-      <section class="classrooms-section section">
-        <div class="container">
-          <div class="classrooms-header">
-            <h2>Наши аудитории</h2>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
           </div>
-          <div class="classrooms-content">
-            <!-- Контент будет добавлен позже -->
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
+          </div>
+          <div class="pck-card">
+            <div class="pck-card__placeholder"></div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
+      <div class="footer-branding">
         <div class="brand-mark"><img src="https://college.iksu.kg/wp-content/uploads/2021/12/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA2.png" alt="Лого колледжа"></div>
-        <p class="brand-name" data-i18n="footerName">Колледж ИГУ</p>
-        <p class="brand-sub" data-i18n="footerSub">Имени Касыма Тыныстанова, Каракол</p>
+        <div>
+          <div class="brand-name" data-i18n="brandName">Колледж ИГУ им. Касыма Тыныстанова</div>
+          <div class="brand-sub" data-i18n="brandSub">Каракол, Кыргызстан</div>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="index.html#top" data-i18n="footerTop">Наверх</a>
-        <a href="news.html" data-i18n="footerNews">Новости</a>
-        <a href="index.html#events" data-i18n="footerEvents">События</a>
-        <a href="index.html#academics" data-i18n="footerAcademics">Программы</a>
-      </div>
-      <p class="footer-note" data-i18n="footerNote">Демонстрационный сайт для колледжа ИКГУ им. К. Тыныстанова.</p>
+      <p class="footer-note" data-i18n="footerNote">© 2024 Колледж ИГУ им. Касыма Тыныстанова. Все права защищены.</p>
     </footer>
   </div>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
