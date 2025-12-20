@@ -472,18 +472,6 @@
   box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.15);
 }
 
-.playlist-select {
-  border: 2px solid var(--accent-primary);
-  background: var(--bg-secondary);
-  font-weight: 500;
-}
-
-.playlist-select:focus {
-  outline: none;
-  border-color: var(--accent-secondary);
-  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.1);
-}
-
 .radio-group {
   display: flex;
   gap: 16px;

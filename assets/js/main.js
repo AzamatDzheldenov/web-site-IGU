@@ -1,255 +1,5 @@
-// Используем переводы из translations.js если доступны, иначе используем встроенные
-const translations = (typeof allTranslations !== 'undefined') ? allTranslations : {
-  ru: {
-    brandName: 'Колледж ИГУ им. Касыма Тыныстанова',
-    brandSub: 'Каракол, Кыргызстан',
-    navPrograms: 'Программы',
-    navNews: 'Новости',
-    navEvents: 'События',
-    navCampus: 'Студентам',
-    navLectures: 'Лекции',
-    navSchedule: 'Расписание',
-    navChat: 'Чат',
-    navApply: 'Поступить',
-    heroEyebrow: 'Колледж ИГУ',
-    heroTitle: 'Образование в Караколе',
-    heroLead: 'Государственный колледж Иссык-Кульского государственного университета имени Касыма Тыныстанова в Караколе. Прикладные программы, практика и поддержка студентов.',
-    heroPrimary: 'Поступить и посетить',
-    heroSecondary: 'Свежие новости',
-    metaProgramsLabel: 'Программ подготовки',
-    metaProgramsValue: '21',
-    metaStudentsLabel: 'Студентов',
-    metaStudentsValue: '1130',
-    metaCityLabel: 'Город',
-    metaCityValue: 'Каракол',
-    cardLabel: 'О колледже',
-    cardTitle: 'Практика и профессии',
-    cardText: 'Прикладные специальности, дуальное обучение, наставники из индустрии и современные лаборатории.',
-    tagApplied: 'Прикладные науки',
-    tagTech: 'Техника',
-    tagService: 'Сервис',
-    newsEyebrow: 'Жизнь колледжа',
-    newsTitle: 'Новости и достижения',
-    newsLead: 'Успехи студентов, проекты с партнёрами и обновления кампуса.',
-    studentsEyebrow: 'Студенты',
-    studentsTitle: 'Наша команда',
-    studentsLead: 'Активные и целеустремлённые студенты, которые строят будущее.',
-    eventsEyebrow: 'Будьте на связи',
-    eventsTitle: 'События и встречи',
-    eventsLead: 'Открытые лекции, мастер-классы и ярмарки карьеры для студентов и абитуриентов.',
-    academicsEyebrow: 'Программы',
-    academicsTitle: 'Специальности и профили',
-    academicsLead: 'Выберите направление: педагогика, IT, сервис, медицина, аграрные и инженерные дисциплины.',
-    specialtiesEyebrow: 'Специальности',
-    specialtiesTitle: 'Специальности и сроки обучения',
-    campusEyebrow: 'Кампус',
-    campusTitle: 'Учёба и быт в Караколе',
-    campusLead: 'Учебные корпуса, лаборатории, библиотека и общежития рядом с горами и озером Иссык-Куль.',
-    ctaEyebrow: 'Шаг к поступлению',
-    ctaTitle: 'Присоединяйтесь к колледжу',
-    ctaLead: 'Оставьте заявку, запишитесь на день открытых дверей или получите консультацию по программам.',
-    ctaPrimary: 'Оставить заявку',
-    ctaSecondary: 'Записаться на визит',
-    ctaNoteTitle: 'Почему выбирают нас',
-    footerName: 'Колледж ИГУ',
-    footerSub: 'Имени Касыма Тыныстанова, Каракол',
-    footerTop: 'Наверх',
-    footerNews: 'Новости',
-    footerEvents: 'События',
-    footerAcademics: 'Программы',
-    footerNote: 'Демонстрационный сайт для колледжа ИКГУ им. К. Тыныстанова.',
-    ctaList: [
-      'Лучший колледж в городе',
-      '21 специальностей',
-      'Профильные знания',
-      'Опытные преподаватели',
-      'Упор на практику'
-    ],
-    campusCards: [
-      {
-        title: 'Библиотека и ИТ-доступ',
-        desc: 'Электронные ресурсы, читальные залы и компьютеры для проектной работы.',
-        link: 'Узнать о ресурсах'
-      },
-      {
-        title: 'Общежития и поддержка',
-        desc: 'Места в общежитии, кураторы групп и студенческие клубы.',
-        link: 'Условия проживания'
-      },
-      {
-        title: 'Лаборатории и мастерские',
-        desc: 'Практические занятия в медицинских, педагогических и технических кабинетах.',
-        link: 'Посмотреть базы практик'
-      }
-    ]
-  },
-  ky: {
-    brandName: 'К. Тыныстанов атындагы ЫКМУ колледжи',
-    brandSub: 'Каракол, Кыргызстан',
-    navPrograms: 'Программалар',
-    navNews: 'Жаңылыктар',
-    navEvents: 'Иш-чаралар',
-    navCampus: 'Студенттерге',
-    navLectures: 'Лекциялар',
-    navSchedule: 'Жетиш',
-    navChat: 'Чат',
-    navApply: 'Кабыл алуу',
-    heroEyebrow: 'ЫКМУ колледжи',
-    heroTitle: 'Караколда билим',
-    heroLead: 'Каракол шаарындагы К. Тыныстанов атындагы Ысык-Көл мамлекеттик университетинин колледжи. Практикалык программалар, өндүрүштүк практика жана студенттик колдоо.',
-    heroPrimary: 'Кабыл алуу жана визит',
-    heroSecondary: 'Жаңылыктарды көрүү',
-    metaProgramsLabel: 'Программалар',
-    metaProgramsValue: '21',
-    metaStudentsLabel: 'Студенттер',
-    metaStudentsValue: '1130',
-    metaCityLabel: 'Шаар',
-    metaCityValue: 'Каракол',
-    cardLabel: 'Колледж тууралуу',
-    cardTitle: 'Практика жана кесиптер',
-    cardText: 'Дуалдык окутуу, өндүрүштүк практика жана заманкы жабдылган кабинеттер.',
-    tagApplied: 'Колдонмо илимдер',
-    tagTech: 'Техника',
-    tagService: 'Сервис',
-    newsEyebrow: 'Колледж жаңылыктары',
-    newsTitle: 'Жаңылыктар жана жетишкендиктер',
-    newsLead: 'Студенттик долбоорлор, өнөктөштөр менен биргелешкен иштер жана кампустагы жаңылоолор.',
-    studentsEyebrow: 'Студенттер',
-    studentsTitle: 'Биздин команда',
-    studentsLead: 'Активдүү жана максаттуу студенттер, алар келечекти куруп жатышат.',
-    eventsEyebrow: 'Кошулуңуз',
-    eventsTitle: 'Иш-чаралар жана жолугушуулар',
-    eventsLead: 'Ачык лекциялар, мастер-класстар жана карьера күндөрү.',
-    academicsEyebrow: 'Программалар',
-    academicsTitle: 'Адистиктер',
-    academicsLead: 'Педагогика, IT, сервис, медицина, агрардык жана инженердик багыттар.',
-    specialtiesEyebrow: 'Адистиктер',
-    specialtiesTitle: 'Адистиктер жана окуу мөөнөтү',
-    campusEyebrow: 'Кампус',
-    campusTitle: 'Караколдогу студенттик жашоо',
-    campusLead: 'Окуу корпустары, лабораториялар, китепкана жана жатакана — тоолор менен көлдүн жанында.',
-    ctaEyebrow: 'Кабыл алуу кадамы',
-    ctaTitle: 'Колледжге кошулуңуз',
-    ctaLead: 'Өтүнмө калтырыңыз, ачык эшик күнүнө катталыңыз же программа боюнча кеңеш алыңыз.',
-    ctaPrimary: 'Өтүнмө калтыруу',
-    ctaSecondary: 'Визитке катталуу',
-    ctaNoteTitle: 'Эмне үчүн биз',
-    footerName: 'ЫКМУ колледжи',
-    footerSub: 'К. Тыныстанов атындагы, Каракол',
-    footerTop: 'Жогору',
-    footerNews: 'Жаңылыктар',
-    footerEvents: 'Иш-чаралар',
-    footerAcademics: 'Программалар',
-    footerNote: 'К. Тыныстанов атындагы ЫКМУ колледжине арналган демо сайт.',
-    ctaList: [
-      'Шаарда эң мыкты колледж',
-      '21 адистик',
-      'Адистик билим',
-      'Тажрыйбалуу окутуучулар',
-      'Практикалык максат'
-    ],
-    campusCards: [
-      {
-        title: 'Китепкана жана IT мүмкүнчүлүк',
-        desc: 'Электрондук ресурстар, окуу залдары жана долбоорлор үчүн компьютерлер.',
-        link: 'Ресурстарды көрүү'
-      },
-      {
-        title: 'Жатакана жана колдоо',
-        desc: 'Жатаканада орундар, кураторлор жана студенттик клубдар.',
-        link: 'Жашоо шарттары'
-      },
-      {
-        title: 'Лабораториялар жана устаканалар',
-        desc: 'Медициналык, педагогикалык жана техникалык кабинеттерде практика.',
-        link: 'Практика базалары'
-      }
-    ]
-  },
-  en: {
-    brandName: 'College of Issyk-Kul State University (Kasym Tynystanov)',
-    brandSub: 'Karakol, Kyrgyzstan',
-    navPrograms: 'Programs',
-    navNews: 'News',
-    navEvents: 'Events',
-    navCampus: 'Student Life',
-    navLectures: 'Lectures',
-    navSchedule: 'Schedule',
-    navChat: 'Chat',
-    navApply: 'Apply',
-    heroEyebrow: 'IKSU College',
-    heroTitle: 'Education in Karakol',
-    heroLead: 'State college of Issyk-Kul State University named after Kasym Tynystanov in Karakol. Applied programs, practice, and student support.',
-    heroPrimary: 'Apply & Visit',
-    heroSecondary: 'Latest news',
-    metaProgramsLabel: 'Programs',
-    metaProgramsValue: '21',
-    metaStudentsLabel: 'Students',
-    metaStudentsValue: '1130',
-    metaCityLabel: 'City',
-    metaCityValue: 'Karakol',
-    cardLabel: 'About the college',
-    cardTitle: 'Practice and professions',
-    cardText: 'Applied majors, dual training, industry mentors, and modern labs.',
-    tagApplied: 'Applied science',
-    tagTech: 'Technology',
-    tagService: 'Service',
-    newsEyebrow: 'Campus life',
-    newsTitle: 'News and highlights',
-    newsLead: 'Student successes, partner projects, and campus updates.',
-    studentsEyebrow: 'Students',
-    studentsTitle: 'Our team',
-    studentsLead: 'Active and driven students building the future.',
-    eventsEyebrow: 'Stay connected',
-    eventsTitle: 'Events and meetups',
-    eventsLead: 'Open lectures, workshops, and career fairs for students and applicants.',
-    academicsEyebrow: 'Programs',
-    academicsTitle: 'Majors and tracks',
-    academicsLead: 'Choose pedagogy, IT, service, healthcare, agrarian, or engineering paths.',
-    specialtiesEyebrow: 'Specialties',
-    specialtiesTitle: 'Majors and study duration',
-    campusEyebrow: 'Campus',
-    campusTitle: 'Study and life in Karakol',
-    campusLead: 'Classrooms, labs, library, and dorms near the mountains and Issyk-Kul lake.',
-    ctaEyebrow: 'Next step',
-    ctaTitle: 'Join the college',
-    ctaLead: 'Submit an application, sign up for an open day, or get program guidance.',
-    ctaPrimary: 'Submit application',
-    ctaSecondary: 'Book a visit',
-    ctaNoteTitle: 'Why students choose us',
-    footerName: 'IKSU College',
-    footerSub: 'Named after Kasym Tynystanov, Karakol',
-    footerTop: 'Back to top',
-    footerNews: 'News',
-    footerEvents: 'Events',
-    footerAcademics: 'Programs',
-    footerNote: 'Demo website for IKSU College.',
-    ctaList: [
-      'Best college in the city',
-      '21 specialties',
-      'Specialized knowledge',
-      'Experienced instructors',
-      'Focus on practice'
-    ],
-    campusCards: [
-      {
-        title: 'Library and IT access',
-        desc: 'E-resources, reading rooms, and computers for project work.',
-        link: 'View resources'
-      },
-      {
-        title: 'Dorms and support',
-        desc: 'Housing options, group advisors, and student clubs.',
-        link: 'Housing details'
-      },
-      {
-        title: 'Labs and workshops',
-        desc: 'Hands-on practice in medical, pedagogical, and technical labs.',
-        link: 'See practice bases'
-      }
-    ]
-  }
-};
+// Используем переводы только из translations.js (allTranslations)
+const translations = (typeof allTranslations !== 'undefined') ? allTranslations : {};
 
 const newsItems = {
   ru: [
@@ -545,11 +295,6 @@ function renderCtaList(lang) {
   });
 }
 
-function setText(selector, value) {
-  const el = document.querySelector(selector);
-  if (el) el.textContent = value;
-}
-
 function applyTranslations(lang) {
   const t = translations[lang];
   if (!t) return;
@@ -609,39 +354,6 @@ function throttle(func, limit = 300) {
     }
   };
 }
-
-// Request Animation Frame for smooth animations
-function createAnimationFrame(callback) {
-  let id = null;
-  return function execute(...args) {
-    if (id) cancelAnimationFrame(id);
-    id = requestAnimationFrame(() => {
-      callback(...args);
-      id = null;
-    });
-  };
-}
-
-// Performance: Cache DOM queries
-const domCache = {
-  navToggle: null,
-  navLinks: null,
-  langSelect: null,
-  themeToggle: null,
-  get(selector) {
-    if (!this[selector]) {
-      this[selector] = document.querySelector(selector);
-    }
-    return this[selector];
-  },
-  clear() {
-    Object.keys(this).forEach(key => {
-      if (key !== 'get' && key !== 'clear') {
-        this[key] = null;
-      }
-    });
-  }
-};
 
 function setupNavToggle() {
   const toggle = document.querySelector('.nav-toggle');
@@ -759,11 +471,6 @@ function setupTestimonialsReveal() {
 
     cards.forEach((card) => observer.observe(card));
   }
-
-  // Use throttle to prevent excessive event handling
-  const handleInteraction = throttle(() => {
-    // Event handling with throttle
-  });
 
   // Keep cards visible once revealed; avoid hiding on mouse leave
   cards.forEach((card) => {
@@ -888,6 +595,7 @@ function initContactMenu() {
 function setupBurgerMenu() {
   const burgerToggle = document.getElementById('burger-toggle');
   const burgerMenu = document.getElementById('burger-menu');
+  const headerNavLinks = document.getElementById('nav-links');
   
   if (!burgerToggle || !burgerMenu) {
     console.error('Burger menu or toggle not found in DOM');
@@ -935,6 +643,82 @@ function setupBurgerMenu() {
     });
   };
 
+  const syncHeaderNavToBurger = () => {
+    const nav = burgerMenu.querySelector('.burger-menu__nav');
+    if (!nav || !headerNavLinks) return;
+
+    // Build set of existing hrefs to avoid duplicates
+    const existingHrefs = new Set(
+      Array.from(nav.querySelectorAll('a.burger-menu__link')).map((a) => a.getAttribute('href'))
+    );
+
+    // Collect header links (top-level + dropdown items)
+    const headerLinks = Array.from(headerNavLinks.querySelectorAll('a'));
+    const studentDropdownLinks = Array.from(
+      (document.querySelector('.nav-dropdown .dropdown-menu') || { querySelectorAll: () => [] }).querySelectorAll('a')
+    );
+
+    const allHeaderLinks = [...headerLinks, ...studentDropdownLinks];
+
+    allHeaderLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      const text = link.textContent?.trim();
+      if (!href || existingHrefs.has(href)) return;
+      const a = document.createElement('a');
+      a.className = 'burger-menu__link';
+      a.href = href;
+      a.textContent = text || 'Ссылка';
+      nav.appendChild(a);
+      existingHrefs.add(href);
+    });
+
+    // Add theme toggle and language selector controls inside burger if missing
+    let controls = burgerMenu.querySelector('.burger-menu__controls');
+    if (!controls) {
+      controls = document.createElement('div');
+      controls.className = 'burger-menu__controls';
+      controls.style.display = 'grid';
+      controls.style.gridTemplateColumns = '1fr';
+      controls.style.gap = '10px';
+
+      const themeBtn = document.createElement('button');
+      themeBtn.className = 'burger-menu__link';
+      themeBtn.textContent = 'Сменить тему';
+      themeBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+
+      const langWrap = document.createElement('div');
+      langWrap.className = 'burger-menu__control';
+      const label = document.createElement('label');
+      label.textContent = 'Язык:';
+      label.style.marginRight = '8px';
+      const langSelect = document.createElement('select');
+      langSelect.id = 'burger-lang-select';
+      ['ru','ky','en'].forEach((code) => {
+        const opt = document.createElement('option');
+        opt.value = code;
+        opt.textContent = code === 'ru' ? 'Рус' : code === 'ky' ? 'Kyr' : 'Eng';
+        langSelect.appendChild(opt);
+      });
+      const savedLang = localStorage.getItem('preferredLanguage');
+      langSelect.value = (savedLang && ['ru','ky','en'].includes(savedLang)) ? savedLang : 'ru';
+      langSelect.addEventListener('change', (e) => applyTranslations(e.target.value));
+
+      langWrap.appendChild(label);
+      langWrap.appendChild(langSelect);
+
+      controls.appendChild(themeBtn);
+      controls.appendChild(langWrap);
+      nav.insertBefore(controls, nav.firstChild);
+    }
+  };
+
   const openMenu = () => {
     // If for any reason menu content became empty, restore it and rebind handlers
     const nav = burgerMenu.querySelector('.burger-menu__nav');
@@ -942,6 +726,10 @@ function setupBurgerMenu() {
       console.warn('Burger menu content missing. Restoring initial markup.');
       burgerMenu.innerHTML = initialMenuHTML;
       bindBurgerHandlers();
+    }
+    // Ensure header navigation items are available inside burger on mobile/tablet
+    if (window.innerWidth <= 1024) {
+      syncHeaderNavToBurger();
     }
     console.log('Opening burger menu');
     burgerMenu.classList.add('is-open');
@@ -972,6 +760,18 @@ function setupBurgerMenu() {
   // Initial bind for existing DOM
   bindBurgerHandlers();
 
+  // Sync once at init for mobile/tablet
+  if (window.innerWidth <= 1024) {
+    syncHeaderNavToBurger();
+  }
+
+  // Re-sync on resize to handle transitions between breakpoints
+  window.addEventListener('resize', debounce(() => {
+    if (window.innerWidth <= 1024) {
+      syncHeaderNavToBurger();
+    }
+  }, 250));
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && burgerMenu.classList.contains('is-open')) {
       closeMenu();
@@ -993,31 +793,6 @@ function init() {
   setupRevealAnimations();
   initContactMenu();
   setupBurgerMenu();
-  setupDocumentHandlers();
-}
-
-// Обработчики для документов
-function setupDocumentHandlers() {
-  const documentCards = document.querySelectorAll('.document-card__files');
-  
-  if (!documentCards.length) return;
-  
-  // Пример: добавляем обработчики для каждой категории документов
-  // Это можно использовать для загрузки реальных документов с сервера
-  documentCards.forEach(card => {
-    const category = card.getAttribute('data-category');
-    // Здесь можно добавить функциональность загрузки документов
-  });
-}
-
-// Функция для скачивания документа
-function downloadDocument(url, fileName) {
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = fileName || 'document';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
 }
 
 document.addEventListener('DOMContentLoaded', init);

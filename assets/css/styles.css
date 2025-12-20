@@ -345,12 +345,6 @@ a:active,
   border-color: var(--accent-primary);
 }
 
-.lang-switch {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .lang-select {
   background: var(--bg-secondary);
   color: var(--text-primary);
@@ -473,6 +467,91 @@ html:not([data-theme="light"]) .nav-links a:hover {
 .burger-menu.is-open {
   display: flex;
   justify-content: flex-end;
+}
+
+/* Global responsive & mobile-first improvements */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body, .page-shell {
+  overflow-x: hidden;
+}
+
+.btn,
+.nav-links a,
+.nav-links button,
+.dropdown-menu a,
+button,
+input,
+select,
+textarea {
+  min-height: 44px;
+}
+
+/* Mobile & tablet: rely on burger menu */
+@media (max-width: 1024px) {
+  .nav-links,
+  .nav-toggle,
+  .theme-switch,
+  .lang-switch {
+    display: none !important;
+  }
+
+  .burger-menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    gap: 8px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 24px 0 36px;
+    gap: 24px;
+  }
+
+  .hero__content h1 {
+    font-size: clamp(28px, 6.2vw, 36px);
+  }
+
+  .lede {
+    font-size: 16px;
+  }
+}
+
+/* Strict mobile adjustments */
+@media (max-width: 767px) {
+  .nav {
+    padding: 8px 0;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .brand-sub {
+    font-size: 13px;
+  }
+
+  .section,
+  .panel {
+    padding: 20px 0;
+  }
+
+  .card,
+  .pillar-card,
+  .specialty-card {
+    padding: 14px;
+  }
+
+  .burger-menu__nav .burger-menu__link,
+  .burger-menu__dropdown-link {
+    min-height: 44px;
+    font-size: 16px;
+  }
 }
 
 .burger-menu__backdrop {
@@ -687,9 +766,11 @@ html:not([data-theme="light"]) .nav-links a:hover {
   display: grid;
 }
 
+/* Normalize the "Студентам" button to match other nav items */
 .neon-text {
-  text-shadow: 0 0 6px currentColor, 0 0 12px currentColor, 0 0 18px currentColor;
-  animation: neonRainbow 6s linear infinite;
+  color: inherit;
+  text-shadow: none;
+  animation: none;
 }
 
 @keyframes neonRainbow {

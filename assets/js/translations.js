@@ -152,23 +152,23 @@ const allTranslations = {
     navEvents: 'Иш-чаралар',
     navCampus: 'Студенттерге',
     navLectures: 'Лекциялар',
-    navSchedule: 'График',
+    navSchedule: 'Сабак жадывалы',
     navChat: 'Чат',
     navApply: 'Кабыл алуу',
     
     // Меню категорий лекций
     lecturesMission: 'Колледждин миссиясы',
     lecturesBuildings: 'Корпустар',
-    lecturesDirector: 'Директордун сүйлөмү',
+    lecturesDirector: 'Директордун кайрылуусу',
     lecturesCommittees: 'ПЦК курамы',
     lecturesDocuments: 'Нормативдик-юридикалык документтер',
     
     // Басты бет
     heroEyebrow: 'ЫКМУ колледжи',
-    heroTitle: 'Караколда билим',
-    heroLead: 'Каракол шаарындагы К. Тыныстанов атындагы Ысык-Көл мамлекеттик университетинин колледжи. Практикалык программалар, өндүрүштүк практика жана студенттик колдоо.',
-    heroPrimary: 'Кабыл алуу жана визит',
-    heroSecondary: 'Жаңы жаңылыктарды көрүү',
+    heroTitle: 'Караколдо билим',
+    heroLead: 'Каракол шаарындагы К. Тыныстанов атындагы Ысык-Көл мамлекеттик университетинин колледжи. Колдонмо программалар, өндүрүштүк практика жана студенттерди колдоо.',
+    heroPrimary: 'Өтүнмө берүү жана визит',
+    heroSecondary: 'Жаңылыктарды көрүү',
     
     // Метрикалар
     metaProgramsLabel: 'Программалар',
@@ -181,32 +181,32 @@ const allTranslations = {
     // Картачка "Колледж жөнүндө"
     cardLabel: 'Колледж жөнүндө',
     cardTitle: 'Практика жана кесиптер',
-    cardText: 'Практикалык адистиктер, экилик окутуу, индустриядан кураторлор жана заманбап лабораториялар.',
+    cardText: 'Практикалык адистиктер, дуалдык окутуу, тармактык менторлор жана заманбап лабораториялар.',
     
     // Тегтер
-    tagApplied: 'Практикалык билим',
-    tagTech: 'Техника',
-    tagService: 'Сервис',
+    tagApplied: 'Колдонмо илимдер',
+    tagTech: 'Технология',
+    tagService: 'Кызмат көрсөтүү',
     
     // Жаңылыктар
     newsEyebrow: 'Колледждин жашоосу',
-    newsTitle: 'Жаңылыктар жана ишмер',
-    newsLead: 'Студенттердин ийгиликтери, өнөктөштөрдүн жобалары жана кампустун жаңылоолору.',
+    newsTitle: 'Жаңылыктар жана жетишкендиктер',
+    newsLead: 'Студенттердин ийгиликтери, өнөктөштүк долбоорлор жана кампустагы жаңылыктар.',
     
     // Студенттер
     studentsEyebrow: 'Студенттер',
     studentsTitle: 'Биздин топ',
-    studentsLead: 'Активдүү жана максатка багыт алган студенттер, алдыны көрүүчүлөр.',
+    studentsLead: 'Инициативдүү жана максаттуу студенттер — келечекти куруучулар.',
     
     // Иш-чаралар
     eventsEyebrow: 'Байланышта болуңуз',
     eventsTitle: 'Иш-чаралар жана жолугушуулар',
-    eventsLead: 'Ачык лекциялар, мастер-класстар жана карьераны таануу ярмаркалары.',
+    eventsLead: 'Ачык лекциялар, мастер-класстар жана карьера жарманкелери.',
     
     // Окутуу программалары
     academicsEyebrow: 'Программалар',
     academicsTitle: 'Адистиктер жана профилдер',
-    academicsLead: 'Бөлүмүн тандаңыз: педагогика, IT, сервис, медицина, аграрлык жана инженерлик дисциплиналар.',
+    academicsLead: 'Багыт тандаңыз: педагогика, IT, кызмат көрсөтүү, медицина, агрардык жана инженердик тармактар.',
     
     // Адистиктер
     specialtiesEyebrow: 'Адистиктер',
@@ -214,77 +214,77 @@ const allTranslations = {
     
     // Кампус
     campusEyebrow: 'Кампус',
-    campusTitle: 'Каракол университетинде окуу жана жашоо',
-    campusLead: 'Окуу корпустары, лабораториялар, китепкана жана Ысык-Көл чокусунун жанындагы жатын үйлөр.',
+    campusTitle: 'Каракол шаарында окуу жана жашоо',
+    campusLead: 'Окуу корпустары, лабораториялар, китепкана жана Ысык-Көлдүн жээгиндеги жатаканалар.',
     
     // Чакыруу
-    ctaEyebrow: 'Кабыл алууга шарт',
+    ctaEyebrow: 'Кабыл алууга кадам',
     ctaTitle: 'Колледжге кошулуңуз',
-    ctaLead: 'Өтүнүч берүү, ачык эстелишке катталуу же программалар боюнча консультацияга алуу.',
-    ctaPrimary: 'Өтүнүч жөнөт',
-    ctaSecondary: 'Визитке катталуу',
-    ctaNoteTitle: 'Эмне үчүн биз',
+    ctaLead: 'Өтүнмө бериңиз, ачык эшик күнүнө жазылыңыз же программалар боюнча кеңеш алыңыз.',
+    ctaPrimary: 'Өтүнмө берүү',
+    ctaSecondary: 'Визитке жазылуу',
+    ctaNoteTitle: 'Эмне үчүн бизди тандашат',
     
     // Подвал
     footerName: 'ЫКМУ колледжи',
     footerSub: 'К. Тыныстанов атындагы, Каракол',
-    footerTop: 'Өйдө',
+    footerTop: 'Жогору',
     footerNews: 'Жаңылыктар',
     footerEvents: 'Иш-чаралар',
     footerAcademics: 'Программалар',
-    footerNote: 'ЫКМУ им. К. Тыныстанов колледжи үчүн көрсөтмө сайты.',
+    footerNote: 'К. Тыныстанов атындагы ЫКМУ колледжи үчүн үлгү сайт.',
     
     // Миссия бете
     missionTitle: 'Колледждин миссиясы',
     missionEyebrow: 'Биздин баалуулуктар',
     missionCard1: 'Миссия',
-    missionCard1Desc: 'Аймакты өнүктүүгө өңкүйүү адист эксперттерди даярдоо',
+    missionCard1Desc: 'Аймактын өнүгүүсүнө салым кошкон компетенттүү адистерди даярдоо',
     missionCard2: 'Көрүнүш',
-    missionCard2Desc: 'Эл аралык деңгээлдеги заманбап окутуу жүргүсүнүн мекемеси',
+    missionCard2Desc: 'Эл аралык деңгээлдеги заманбап окуу жай',
     missionCard3: 'Баалуулуктар',
     missionCard3Desc: 'Сапат, инновация, социалдык жооптуулук',
     
     // Корпустар бете
     buildingsTitle: 'Биздин корпустар',
     buildingsEyebrow: 'Инфраструктура',
-    buildingsIntro: 'Сапаттуу окутуу үчүн зарыл болгон бардык нерселер менен жабдылган заманбап окуу биналары',
+    buildingsIntro: 'Сапаттуу билим үчүн керектүүнүн баары менен жабдылган заманбап окуу имараттары',
     classroomsTitle: 'Биздин аудиториялар',
     
     // Директор бете
-    directorTitle: 'Директордун сүйлөмү',
+    directorTitle: 'Директордун кайрылуусу',
     directorEyebrow: 'Колледждин башчылыгы',
     
     // Документтер бете
-    documentsTitle: 'Нормативдик-юридикалык документтер',
+    documentsTitle: 'Нормативдик-укуктук документтер',
     documentsEyebrow: 'Расмий документтер',
-    docPositive: 'Положениялар',
+    docPositive: 'Жоболор',
     docLicenses: 'Лицензиялар',
     docCertificates: 'Сертификаттар',
-    docPrograms: 'Окутуу программалары',
-    docPlans: 'Иш жүргүсүнүн плани',
+    docPrograms: 'Билим берүү программалары',
+    docPlans: 'Иш планы',
     docMemorandum: 'Меморандумдар',
     docConcept: 'Концепция',
     
     // Лекциялар
-    lecturesTitle: 'Лекциялар жана видео материалдар',
-    lecturesEyebrow: 'Билим берүүчү контент',
-    addPlaylist: 'Плейлист кош',
-    addVideo: 'Видео кош',
+    lecturesTitle: 'Лекциялар жана видеоматериалдар',
+    lecturesEyebrow: 'Билим берүү контенти',
+    addPlaylist: 'Плейлист кошуу',
+    addVideo: 'Видео кошуу',
     
     // Батондор жана аракеттер
-    apply: 'Кабыл алуу',
-    visit: 'Бара',
-    learn: 'Дагы көп',
-    download: 'Чүшүрүү',
-    view: 'Карап чыгуу',
+    apply: 'Өтүнмө берүү',
+    visit: 'Визитке жазылуу',
+    learn: 'Кеңири маалымат',
+    download: 'Жүктөп алуу',
+    view: 'Көрүү',
     close: 'Жабуу',
-    loading: 'Жүктөө...',
+    loading: 'Жүктөлүүдө...',
     error: 'Ката',
     success: 'Ийгиликтүү',
   },
   en: {
     // General elements
-    brandName: 'K. Tynystaev College, IKGU',
+    brandName: 'K. Tynystanov College, IKGU',
     brandSub: 'Karakol, Kyrgyzstan',
     
     // Navigation
@@ -301,18 +301,18 @@ const allTranslations = {
     lecturesMission: 'College Mission',
     lecturesBuildings: 'Buildings',
     lecturesDirector: 'Director\'s Address',
-    lecturesCommittees: 'Committee Members',
+    lecturesCommittees: 'Subject Committees',
     lecturesDocuments: 'Regulatory Documents',
     
     // Home page
     heroEyebrow: 'IKGU College',
     heroTitle: 'Education in Karakol',
-    heroLead: 'A state college of Issyk-Kul State University named after Kasym Tynystayev in Karakol. Applied programs, internships and student support.',
+    heroLead: 'A public college of Issyk-Kul State University named after Kasym Tynystanov in Karakol. Applied programs, internships, and student support.',
     heroPrimary: 'Apply and Visit',
     heroSecondary: 'Latest News',
     
     // Metrics
-    metaProgramsLabel: 'Training Programs',
+    metaProgramsLabel: 'Programs',
     metaProgramsValue: '21',
     metaStudentsLabel: 'Students',
     metaStudentsValue: '1130',
@@ -322,7 +322,7 @@ const allTranslations = {
     // About College Card
     cardLabel: 'About College',
     cardTitle: 'Practice and Professions',
-    cardText: 'Applied specialties, dual education, mentors from industry and modern laboratories.',
+    cardText: 'Applied majors, dual education, industry mentors, and modern labs.',
     
     // Tags
     tagApplied: 'Applied Sciences',
@@ -332,7 +332,7 @@ const allTranslations = {
     // News
     newsEyebrow: 'College Life',
     newsTitle: 'News and Achievements',
-    newsLead: 'Student achievements, partner projects and campus updates.',
+    newsLead: 'Student achievements, partner projects, and campus updates.',
     
     // Students
     studentsEyebrow: 'Students',
@@ -347,7 +347,7 @@ const allTranslations = {
     // Training programs
     academicsEyebrow: 'Programs',
     academicsTitle: 'Specialties and Profiles',
-    academicsLead: 'Choose a direction: education, IT, services, medicine, agricultural and engineering disciplines.',
+    academicsLead: 'Choose a field: education, IT, services, medicine, agricultural and engineering disciplines.',
     
     // Specialties
     specialtiesEyebrow: 'Specialties',
@@ -356,24 +356,24 @@ const allTranslations = {
     // Campus
     campusEyebrow: 'Campus',
     campusTitle: 'Study and Life in Karakol',
-    campusLead: 'Educational buildings, laboratories, library and dormitories near mountains and Issyk-Kul Lake.',
+    campusLead: 'Academic buildings, laboratories, a library, and dorms near the mountains and Issyk-Kul Lake.',
     
     // Call to action
     ctaEyebrow: 'Step to Enrollment',
     ctaTitle: 'Join the College',
-    ctaLead: 'Leave a request, register for open day or get a consultation on programs.',
+    ctaLead: 'Submit an application, register for Open Day, or get program advice.',
     ctaPrimary: 'Submit Application',
     ctaSecondary: 'Book a Visit',
     ctaNoteTitle: 'Why Choose Us',
     
     // Footer
     footerName: 'IKGU College',
-    footerSub: 'Named after K. Tynystayev, Karakol',
+    footerSub: 'Named after K. Tynystanov, Karakol',
     footerTop: 'Top',
     footerNews: 'News',
     footerEvents: 'Events',
     footerAcademics: 'Programs',
-    footerNote: 'Demo website for IKGU college named after K. Tynystayev.',
+    footerNote: 'Demo website for IKGU College named after K. Tynystanov.',
     
     // Mission page
     missionTitle: 'College Mission',
@@ -396,14 +396,14 @@ const allTranslations = {
     directorEyebrow: 'College Leadership',
     
     // Documents page
-    documentsTitle: 'Regulatory and Legal Documents',
+    documentsTitle: 'Regulatory Documents',
     documentsEyebrow: 'Official Documents',
     docPositive: 'Regulations',
     docLicenses: 'Licenses',
     docCertificates: 'Certificates',
     docPrograms: 'Educational Programs',
     docPlans: 'Work Plan',
-    docMemorandum: 'Memorandums',
+    docMemorandum: 'Memoranda',
     docConcept: 'Concept',
     
     // Lectures
