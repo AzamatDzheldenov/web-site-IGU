@@ -100,12 +100,28 @@
     updatePlaylistSelect(playlists);
 
     // Открытие модальных окон
-    addVideoBtn?.addEventListener('click', () => videoModal?.classList.add('active'));
-    addArticleBtn?.addEventListener('click', () => articleModal?.classList.add('active'));
-    addDocBtn?.addEventListener('click', () => docModal?.classList.add('active'));
-    addPlaylistBtn?.addEventListener('click', () => playlistModal?.classList.add('active'));
+    const openModal = (modal) => {
+      if (!modal) return;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      modal.scrollTop = 0;
+      // Фокус на первый интерактивный элемент
+      const firstInput = modal.querySelector('input, textarea, select, button');
+      if (firstInput) {
+        setTimeout(() => firstInput.focus(), 100);
+      }
+    };
 
-    const closeModal = (modal) => modal?.classList.remove('active');
+    const closeModal = (modal) => {
+      if (!modal) return;
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    addVideoBtn?.addEventListener('click', () => openModal(videoModal));
+    addArticleBtn?.addEventListener('click', () => openModal(articleModal));
+    addDocBtn?.addEventListener('click', () => openModal(docModal));
+    addPlaylistBtn?.addEventListener('click', () => openModal(playlistModal));
 
     closeVideoModal?.addEventListener('click', () => closeModal(videoModal));
     closeArticleModal?.addEventListener('click', () => closeModal(articleModal));
@@ -362,6 +378,8 @@
     }
 
     modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    modal.scrollTop = 0;
   }
 
   function extractYouTubeId(url) {
@@ -531,6 +549,8 @@
     };
 
     playerModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    playerModal.scrollTop = 0;
   }
 
   // Закрытие видеоплеера
@@ -543,6 +563,7 @@
     const stop = () => {
       playerIframe.src = '';
       videoPlayerModal.classList.remove('active');
+      document.body.style.overflow = '';
     };
 
     closeVideoPlayerBtn.addEventListener('click', stop);

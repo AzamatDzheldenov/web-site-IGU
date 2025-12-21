@@ -1,246 +1,271 @@
-// JavaScript для страницы новостей
+// ========================================
+// Страница новостей в стиле Telegram
+// ========================================
 
-// Данные новостей
+// Данные новостей с поддержкой видео
+// Добавьте свои новости в этот массив
 const newsData = [
   {
     id: 1,
-    title: 'День открытых дверей ИКГУ 2025',
-    excerpt: 'Приглашаем всех желающих на День открытых дверей! Познакомьтесь с нашими программами обучения, преподавателями и студентами.',
-    content: `Уважаемые абитуриенты и родители!
+    title: 'Золотая и бронзовая награды для Кыргызстана 🇰🇬',
+    excerpt: 'Наша студентка Өмүрбекова Алтынай из группы КИЯ-22 завоевала золотую и бронзовую медали на первенстве мира по армрестлингу в Болгарии.',
+    content: `Золотая и бронзовая награды для Кыргызстана 🇰🇬🇰🇬🇰🇬
 
-Иссык-Кульский Государственный Университет приглашает вас на День открытых дверей, который состоится 20 января 2025 года.
+В Болгарии на первенстве мира по армрестлингу наша студентка из группы КИЯ-22 Өмүрбекова Алтынай вписала своё имя в историю. 🥳🇰🇬
 
-В программе мероприятия:
-• Презентация образовательных программ
-• Экскурсия по территории университета
-• Встреча с преподавателями и студентами
-• Консультации по вопросам поступления
-• Мастер-классы от ведущих специалистов
+Она завоевала золотую медаль на левую руку и стала бронзовым призёром на правую руку в весовой категории до 45 кг.
 
-Начало мероприятия в 10:00. Регистрация участников с 9:30.
+Алтынай поздравляем с победой в мировом первенстве! Ты показала невероятную силу духа и мастерство. Желаем, чтобы эта победа стала стартом для еще более грандиозных свершений, а здоровье и вера в себя всегда были твоими спутниками!
 
-Мы ждем вас по адресу: г. Каракол, ул. Университетская, 1
-
-Для предварительной регистрации свяжитесь с нами по телефону: +996 XXX XXX XXX`,
-    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&h=600&fit=crop',
-    date: '10 декабря 2025'
-  },
-  {
-    id: 2,
-    title: 'Студенты ИКГУ заняли призовые места на республиканской олимпиаде',
-    excerpt: 'Наши студенты показали отличные результаты на республиканской олимпиаде по программированию, завоевав золотую и серебряную медали.',
-    content: `Поздравляем наших талантливых студентов!
-
-В минувшие выходные в столице прошла республиканская олимпиада по программированию среди студентов высших учебных заведений Кыргызстана.
-
-Команда ИКГУ в составе:
-• Азамат Токтогулов (3 курс, специальность "Информатика") - 🥇 Золотая медаль
-• Айжан Сулайманова (2 курс, специальность "Программирование") - 🥈 Серебряная медаль
-• Бекжан Эргешов (4 курс, специальность "Информационные технологии") - участник
-
-Студенты решали сложные алгоритмические задачи и демонстрировали навыки программирования на различных языках.
-
-Руководитель команды, старший преподаватель кафедры информатики Марат Асанович отметил высокий уровень подготовки наших студентов и их целеустремленность.
-
-Желаем нашим студентам дальнейших успехов и новых побед!`,
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&h=600&fit=crop',
-    date: '8 декабря 2025'
-  },
-  {
-    id: 3,
-    title: 'Новогодний концерт и награждение лучших студентов',
-    excerpt: 'Университет провел традиционный новогодний концерт с награждением студентов, отличившихся в учебе, науке и общественной деятельности.',
-    content: `Праздничное настроение в ИКГУ!
-
-Вчера в актовом зале университета состоялся традиционный новогодний концерт, посвященный завершению первого семестра 2024-2025 учебного года.
-
-В торжественной обстановке были награждены:
-📚 Отличники учебы - 45 студентов
-🔬 Победители научных конференций - 12 студентов
-🏆 Активисты студенческого самоуправления - 8 человек
-🎭 Участники творческих коллективов - 15 студентов
-
-Концертная программа включала:
-• Выступление студенческого хора
-• Танцевальные номера от творческого коллектива "Ala-Too"
-• Театральные миниатюры
-• Музыкальные композиции от талантливых студентов
-
-Ректор университета поздравил всех присутствующих с наступающим Новым годом и пожелал успехов в учебе и личной жизни.
-
-Спасибо всем участникам и организаторам за прекрасный праздник!`,
-    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900&h=600&fit=crop',
-    date: '5 декабря 2025'
+ИГУ колледж гордится своей спортсменкой.`,
+    media: {
+      type: 'image',
+      url: 'assets/images/news/WhatsApp Image 2025-12-17 at 14.13.00.jpeg'
+    },
+    date: '17 декабря 2025'
   }
 ];
 
-// Инициализация
-let currentSlide = 0;
-let slideInterval;
+// ========================================
+// Система подсчёта просмотров
+// ========================================
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderSlider();
-  renderNewsList();
-  initSliderControls();
-  startAutoSlide();
-  setupModalHandlers();
-});
-
-// Рендер карусели
-function renderSlider() {
-  const slider = document.getElementById('news-slider');
-  const dots = document.getElementById('slider-dots');
-  
-  slider.innerHTML = newsData.map((news, index) => `
-    <div class="slider-slide" data-id="${news.id}">
-      <img src="${news.image}" alt="${news.title}">
-      <div class="slider-overlay">
-        <h3>${news.title}</h3>
-        <p>${news.excerpt}</p>
-      </div>
-    </div>
-  `).join('');
-
-  dots.innerHTML = newsData.map((_, index) => `
-    <button class="slider-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></button>
-  `).join('');
-
-  // Клики на слайды
-  slider.querySelectorAll('.slider-slide').forEach(slide => {
-    slide.addEventListener('click', () => {
-      const newsId = parseInt(slide.dataset.id);
-      openNewsModal(newsId);
-    });
-  });
-
-  // Клики на точки
-  dots.querySelectorAll('.slider-dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-      const index = parseInt(dot.dataset.index);
-      goToSlide(index);
-      resetAutoSlide();
-    });
-  });
-}
-
-// Рендер списка новостей
-function renderNewsList() {
-  const list = document.getElementById('news-list');
-  
-  list.innerHTML = newsData.map(news => `
-    <div class="news-item" data-id="${news.id}">
-      <img src="${news.image}" alt="${news.title}" class="news-item-image">
-      <div class="news-item-content">
-        <div class="news-item-date">${news.date}</div>
-        <h3 class="news-item-title">${news.title}</h3>
-        <p class="news-item-excerpt">${news.excerpt}</p>
-      </div>
-    </div>
-  `).join('');
-
-  // Клики на новости
-  list.querySelectorAll('.news-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const newsId = parseInt(item.dataset.id);
-      openNewsModal(newsId);
-    });
-  });
-}
-
-// Управление слайдером
-function initSliderControls() {
-  const prevBtn = document.getElementById('slider-prev');
-  const nextBtn = document.getElementById('slider-next');
-
-  prevBtn.addEventListener('click', () => {
-    goToSlide(currentSlide - 1);
-    resetAutoSlide();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    goToSlide(currentSlide + 1);
-    resetAutoSlide();
-  });
-}
-
-// Переход к слайду
-function goToSlide(index) {
-  const slider = document.getElementById('news-slider');
-  const dots = document.querySelectorAll('.slider-dot');
-  const totalSlides = newsData.length;
-
-  // Циклическая прокрутка
-  if (index < 0) {
-    currentSlide = totalSlides - 1;
-  } else if (index >= totalSlides) {
-    currentSlide = 0;
-  } else {
-    currentSlide = index;
+class ViewsCounter {
+  constructor() {
+    this.storageKey = 'news_views';
+    this.sessionKey = 'news_viewed_session';
+    this.initStorage();
   }
 
-  // Анимация
-  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  initStorage() {
+    if (!localStorage.getItem(this.storageKey)) {
+      const initialViews = {};
+      newsData.forEach(news => {
+        initialViews[news.id] = this.getRandomInitialViews();
+      });
+      localStorage.setItem(this.storageKey, JSON.stringify(initialViews));
+    }
+  }
 
-  // Обновление точек
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === currentSlide);
+  getRandomInitialViews() {
+    return Math.floor(Math.random() * 500) + 100;
+  }
+
+  getViews(newsId) {
+    const views = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
+    return views[newsId] || 0;
+  }
+
+  incrementViews(newsId) {
+    const sessionViewed = JSON.parse(sessionStorage.getItem(this.sessionKey) || '[]');
+    
+    if (!sessionViewed.includes(newsId)) {
+      const views = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
+      views[newsId] = (views[newsId] || 0) + 1;
+      localStorage.setItem(this.storageKey, JSON.stringify(views));
+      
+      sessionViewed.push(newsId);
+      sessionStorage.setItem(this.sessionKey, JSON.stringify(sessionViewed));
+      
+      return views[newsId];
+    }
+    
+    return this.getViews(newsId);
+  }
+
+  formatViews(count) {
+    if (count >= 1000000) {
+      return (count / 1000000).toFixed(1).replace('.0', '') + 'M';
+    }
+    if (count >= 1000) {
+      return (count / 1000).toFixed(1).replace('.0', '') + 'K';
+    }
+    return count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+}
+
+const viewsCounter = new ViewsCounter();
+
+// ========================================
+// Инициализация страницы
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderNewsFeed();
+  setupModalHandlers();
+  setupIntersectionObserver();
+});
+
+// ========================================
+// Рендеринг ленты новостей
+// ========================================
+
+function renderNewsFeed() {
+  const feed = document.getElementById('news-feed');
+  
+  feed.innerHTML = newsData.map((news, index) => {
+    const views = viewsCounter.getViews(news.id);
+    const formattedViews = viewsCounter.formatViews(views);
+    
+    return `
+      <article class="news-post" data-id="${news.id}" style="animation-delay: ${index * 0.1}s">
+        <div class="news-post-media">
+          ${renderMedia(news.media, true)}
+        </div>
+        <div class="news-post-body">
+          <h2 class="news-post-title">${news.title}</h2>
+          <p class="news-post-text">${news.excerpt}</p>
+          <div class="news-post-meta">
+            <span class="news-post-date">${news.date}</span>
+            <span class="news-post-views">
+              <span class="views-icon">👁</span>
+              <span class="views-count">${formattedViews}</span>
+            </span>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  feed.querySelectorAll('.news-post').forEach(post => {
+    post.addEventListener('click', () => {
+      const newsId = parseInt(post.dataset.id);
+      openNewsModal(newsId);
+    });
   });
 }
 
-// Автопрокрутка
-function startAutoSlide() {
-  slideInterval = setInterval(() => {
-    goToSlide(currentSlide + 1);
-  }, 5000); // Каждые 5 секунд
+// ========================================
+// Рендеринг медиа (изображение/видео)
+// ========================================
+
+function renderMedia(media, isLazy = false) {
+  if (media.type === 'video') {
+    return `
+      <video 
+        ${isLazy ? 'preload="none"' : 'preload="metadata"'}
+        ${media.poster ? `poster="${media.poster}"` : ''}
+        controls
+        ${isLazy ? 'loading="lazy"' : ''}
+      >
+        <source src="${media.url}" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+    `;
+  }
+  
+  return `
+    <img 
+      src="${media.url}" 
+      alt="Изображение новости"
+      ${isLazy ? 'loading="lazy"' : ''}
+    >
+  `;
 }
 
-function resetAutoSlide() {
-  clearInterval(slideInterval);
-  startAutoSlide();
-}
+// ========================================
+// Модальное окно
+// ========================================
 
-// Открытие модала новости
 function openNewsModal(newsId) {
   const news = newsData.find(n => n.id === newsId);
   if (!news) return;
 
+  const newViews = viewsCounter.incrementViews(newsId);
+  const formattedViews = viewsCounter.formatViews(newViews);
+
   const modal = document.getElementById('news-modal');
+  const mediaContainer = document.getElementById('news-modal-media');
   const title = document.getElementById('news-modal-title');
-  const image = document.getElementById('news-modal-image');
-  const meta = document.getElementById('news-modal-meta');
   const content = document.getElementById('news-modal-content');
+  const date = document.getElementById('news-modal-date');
+  const viewsElement = document.querySelector('#news-modal-views .views-count');
 
+  mediaContainer.innerHTML = renderMedia(news.media, false);
   title.textContent = news.title;
-  image.src = news.image;
-  image.alt = news.title;
-  meta.textContent = news.date;
   content.textContent = news.content;
+  date.textContent = news.date;
+  viewsElement.textContent = formattedViews;
 
+  // Блокируем прокрутку фона
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.overflow = 'hidden';
+  document.body.style.paddingRight = scrollbarWidth + 'px';
+  
   modal.classList.add('active');
+  // Скроллим модальное окно к верху
+  modal.scrollTop = 0;
+
+  updatePostViews(newsId, formattedViews);
 }
 
-// Обработчики модала
+function updatePostViews(newsId, formattedViews) {
+  const post = document.querySelector(`.news-post[data-id="${newsId}"]`);
+  if (post) {
+    const viewsCount = post.querySelector('.views-count');
+    if (viewsCount) {
+      viewsCount.textContent = formattedViews;
+    }
+  }
+}
+
+// ========================================
+// Обработчики модального окна
+// ========================================
+
 function setupModalHandlers() {
   const modal = document.getElementById('news-modal');
   const closeBtn = document.getElementById('close-news-modal');
+  const backdrop = document.getElementById('modal-backdrop');
+
+  const closeModal = () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    
+    const video = modal.querySelector('video');
+    if (video) {
+      video.pause();
+    }
+  };
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
+    closeBtn.addEventListener('click', closeModal);
   }
 
-  // Закрытие по клику на фон
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-    }
-  });
+  if (backdrop) {
+    backdrop.addEventListener('click', closeModal);
+  }
 
-  // Закрытие по Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
+      closeModal();
     }
+  });
+}
+
+// ========================================
+// Intersection Observer для анимаций
+// ========================================
+
+function setupIntersectionObserver() {
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  document.querySelectorAll('.news-post').forEach(post => {
+    post.style.animationPlayState = 'paused';
+    observer.observe(post);
   });
 }

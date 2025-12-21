@@ -10,12 +10,7 @@ const newsItems = {
       meta: 'Каракол'
     },
     {
-      title: 'Запущен дуальный проект с медучреждениями города',
-      blurb: 'Студенты медколледжа проходят практику под руководством наставников.',
-      category: 'Медицина',
-      meta: 'Городская больница'
-    },
-    {
+
       title: 'Педагогический профиль обновил методический центр',
       blurb: 'Новые лаборатории для раннего развития и инклюзивного образования.',
       category: 'Педагогика',
@@ -30,12 +25,7 @@ const newsItems = {
       meta: 'Каракол'
     },
     {
-      title: 'Шаардагы медмекемелер менен дуалдык долбоор башталды',
-      blurb: 'Медициналык багыттын студенттери практиканы наставниктер менен өтүүдө.',
-      category: 'Медицина',
-      meta: 'Шаардык оорукана'
-    },
-    {
+
       title: 'Педагогикалык борбор жаңырды',
       blurb: 'Эрте өнүктүрүү жана инклюзивдүү билим берүү үчүн лабораториялар ачылды.',
       category: 'Педагогика',
@@ -87,7 +77,6 @@ const programs = {
     { name: 'Педагогика', area: 'Дошкольное образование, начальные классы, инклюзивные практики.' },
     { name: 'Информационные технологии', area: 'Разработка, сети, системное администрирование и кибербезопасность.' },
     { name: 'Туризм и сервис', area: 'Организация туров, гостиничный сервис и ивент-менеджмент.' },
-    { name: 'Медицина', area: 'Сестринское дело и основы общественного здравоохранения.' },
     { name: 'Аграрные технологии', area: 'Агрономия, переработка продуктов и экология региона.' },
     { name: 'Инженерные специальности', area: 'Энергетика, монтаж и обслуживание оборудования.' }
   ],
@@ -168,15 +157,34 @@ function setupBrandLink() {
 }
 
 function createNewsCard(item) {
-  const card = document.createElement('article');
-  card.className = 'card';
+  const card = document.createElement('a');
+  card.className = 'photo-card';
+  card.href = '#';
+  // Используем placeholder изображения - можно заменить на реальные фото
+  const imageUrl = `https://images.unsplash.com/photo-${getNewsImageId(item.category)}?w=600&h=750&fit=crop&auto=format`;
   card.innerHTML = `
-    <span class="category">${item.category}</span>
-    <h3>${item.title}</h3>
-    <p>${item.blurb}</p>
-    <p class="meta">${item.meta}</p>
+    <img class="photo-card-image" src="${imageUrl}" alt="${item.title}" loading="lazy">
+    <div class="photo-card-content">
+      <span class="photo-card-category">${item.category}</span>
+      <h3 class="photo-card-title">${item.title}</h3>
+      <p class="photo-card-description">${item.blurb}</p>
+    </div>
   `;
   return card;
+}
+
+function getNewsImageId(category) {
+  // Подбираем изображения по категориям
+  const images = {
+    'Технологии': '1517694712?q=80',
+    'Медицина': '1576091160550-2173dba999ef?q=80',
+    'Педагогика': '1503676260728-1c00da094a0b?q=80',
+    'Technology': '1517694712?q=80',
+    'Healthcare': '1576091160550-2173dba999ef?q=80',
+    'Pedagogy': '1503676260728-1c00da094a0b?q=80',
+    'Технология': '1517694712?q=80'
+  };
+  return images[category] || '1523050854-8f4f2e46b9df?q=80';
 }
 
 function renderNews(lang) {
@@ -207,15 +215,40 @@ function renderEvents(lang) {
 }
 
 function createProgramCard(program, lang) {
-  const card = document.createElement('article');
+  const card = document.createElement('a');
   card.className = 'pillar-card';
+  card.href = '#';
   const focusLabel = lang === 'ru' ? 'Профиль' : lang === 'ky' ? 'Багыт' : 'Focus';
+  // Используем placeholder изображения - можно заменить на реальные фото
+  const imageUrl = getProgramImageUrl(program.name);
   card.innerHTML = `
-    <p class="category">${focusLabel}</p>
-    <h3>${program.name}</h3>
-    <p class="area">${program.area}</p>
+    <img class="pillar-card-image" src="${imageUrl}" alt="${program.name}" loading="lazy">
+    <div class="pillar-card-content">
+      <span class="category">${focusLabel}</span>
+      <h3>${program.name}</h3>
+      <p class="area">${program.area}</p>
+    </div>
   `;
   return card;
+}
+
+function getProgramImageUrl(name) {
+  // Подбираем изображения по названию программы
+  const images = {
+    'Педагогика': 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=375&fit=crop',
+    'Информационные технологии': 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=375&fit=crop',
+    'Туризм и сервис': 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=375&fit=crop',
+    'Медицина': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=375&fit=crop',
+    'Аграрные технологии': 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=500&h=375&fit=crop',
+    'Инженерные специальности': 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&h=375&fit=crop',
+    'Pedagogy': 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=375&fit=crop',
+    'Information Technology': 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=375&fit=crop',
+    'Tourism & Service': 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=375&fit=crop',
+    'Healthcare': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=375&fit=crop',
+    'Agricultural Technology': 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=500&h=375&fit=crop',
+    'Engineering': 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&h=375&fit=crop'
+  };
+  return images[name] || 'https://images.unsplash.com/photo-1523050854-8f4f2e46b9df?w=500&h=375&fit=crop';
 }
 
 function renderPrograms(lang) {
@@ -257,14 +290,34 @@ function renderSpecialties(lang) {
 }
 
 function createCampusCard(card) {
-  const node = document.createElement('article');
+  const node = document.createElement('a');
   node.className = 'campus-card';
+  node.href = '#';
+  // Используем placeholder изображения - можно заменить на реальные фото
+  const imageUrl = getCampusImageUrl(card.title);
   node.innerHTML = `
-    <h3>${card.title}</h3>
-    <p>${card.desc}</p>
-    <a class="text-link" href="#">${card.link}</a>
+    <img class="campus-card-image" src="${imageUrl}" alt="${card.title}" loading="lazy">
+    <div class="campus-card-content">
+      <h3>${card.title}</h3>
+      <p>${card.desc}</p>
+      <span class="text-link">${card.link} →</span>
+    </div>
   `;
   return node;
+}
+
+function getCampusImageUrl(title) {
+  // Подбираем изображения по ключевым словам
+  if (title.includes('Корпус') || title.includes('Building')) {
+    return 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=480&fit=crop';
+  } else if (title.includes('Лаборатори') || title.includes('Lab')) {
+    return 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=480&fit=crop';
+  } else if (title.includes('Библиотек') || title.includes('Library')) {
+    return 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=480&fit=crop';
+  } else if (title.includes('Общежити') || title.includes('Dorm')) {
+    return 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&h=480&fit=crop';
+  }
+  return 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=480&fit=crop';
 }
 
 function renderCampus(lang) {
@@ -611,36 +664,42 @@ function setupBurgerMenu() {
     const menuLinks = burgerMenu.querySelectorAll('.burger-menu__link');
 
     closeTriggers.forEach((trigger) => {
-      trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeMenu();
-      });
+      trigger.removeEventListener('click', closeMenuHandler);
+      trigger.addEventListener('click', closeMenuHandler);
     });
 
     // Handle burger menu dropdown
     const burgerDropdownToggle = burgerMenu.querySelector('.burger-menu__dropdown-toggle');
     if (burgerDropdownToggle) {
-      burgerDropdownToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const isExpanded = burgerDropdownToggle.getAttribute('aria-expanded') === 'true';
-        burgerDropdownToggle.setAttribute('aria-expanded', String(!isExpanded));
-        console.log('Dropdown toggled. Expanded:', !isExpanded);
-      });
+      burgerDropdownToggle.removeEventListener('click', handleDropdownToggle);
+      burgerDropdownToggle.addEventListener('click', handleDropdownToggle);
+      
       const dropdownContent = burgerMenu.querySelector('.burger-menu__dropdown-content');
       if (dropdownContent) {
-        dropdownContent.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
+        dropdownContent.removeEventListener('click', preventDropdownClose);
+        dropdownContent.addEventListener('click', preventDropdownClose);
       }
     }
 
     // Close menu only for regular links (not dropdown toggle or dropdown links)
     menuLinks.forEach((link) => {
       if (!link.classList.contains('burger-menu__dropdown-toggle')) {
-        link.addEventListener('click', closeMenu);
+        link.removeEventListener('click', closeMenuHandler);
+        link.addEventListener('click', closeMenuHandler);
       }
     });
+  };
+
+  const handleDropdownToggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const burgerDropdownToggle = burgerMenu.querySelector('.burger-menu__dropdown-toggle');
+    const isExpanded = burgerDropdownToggle.getAttribute('aria-expanded') === 'true';
+    burgerDropdownToggle.setAttribute('aria-expanded', String(!isExpanded));
+  };
+
+  const preventDropdownClose = (e) => {
+    e.stopPropagation();
   };
 
   const syncHeaderNavToBurger = () => {
@@ -731,15 +790,13 @@ function setupBurgerMenu() {
     if (window.innerWidth <= 1024) {
       syncHeaderNavToBurger();
     }
-    console.log('Opening burger menu');
     burgerMenu.classList.add('is-open');
     burgerToggle.setAttribute('aria-expanded', 'true');
     burgerMenu.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   };
 
-  const closeMenu = () => {
-    console.log('Closing burger menu');
+  const closeMenuHandler = () => {
     burgerMenu.classList.remove('is-open');
     burgerToggle.setAttribute('aria-expanded', 'false');
     burgerMenu.setAttribute('aria-hidden', 'true');
@@ -749,9 +806,8 @@ function setupBurgerMenu() {
   burgerToggle.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('Burger toggle clicked. Menu is open:', burgerMenu.classList.contains('is-open'));
     if (burgerMenu.classList.contains('is-open')) {
-      closeMenu();
+      closeMenuHandler();
     } else {
       openMenu();
     }
@@ -774,7 +830,7 @@ function setupBurgerMenu() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && burgerMenu.classList.contains('is-open')) {
-      closeMenu();
+      closeMenuHandler();
     }
   });
 }

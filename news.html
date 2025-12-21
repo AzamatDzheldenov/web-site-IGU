@@ -111,33 +111,15 @@
       </div>
 
   <main class="main">
-    <section class="news-hero section">
-      <div class="container">
-        <h1 class="section__title">Новости</h1>
-        <p class="section__subtitle">Жизнь колледжа</p>
-      </div>
-    </section>
-
-    <!-- Карусель новостей -->
-    <section class="news-slider section">
-      <div class="container">
-        <div class="slider-wrapper">
-          <div class="slider-container" id="news-slider">
-            <!-- Новости будут загружены через JS -->
-          </div>
-          <button class="slider-btn slider-btn-prev" id="slider-prev">‹</button>
-          <button class="slider-btn slider-btn-next" id="slider-next">›</button>
-          <div class="slider-dots" id="slider-dots"></div>
+    <!-- Лента новостей в стиле Telegram -->
+    <section class="news-feed">
+      <div class="news-feed-container">
+        <div class="news-feed-header">
+          <h1 class="news-feed-title">Новости</h1>
+          <p class="news-feed-subtitle">Жизнь колледжа</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Список всех новостей -->
-    <section class="news-list section">
-      <div class="container">
-        <h2 class="section__title">Все новости</h2>
-        <div class="news-items" id="news-list">
-          <!-- Новости будут загружены через JS -->
+        <div class="news-feed-list" id="news-feed">
+          <!-- Посты новостей будут загружены через JS -->
         </div>
       </div>
     </section>
@@ -145,14 +127,23 @@
 
   <!-- Модальное окно для полной новости -->
   <div class="modal" id="news-modal">
-    <div class="modal-content modal-content-large">
-      <div class="modal-header">
-        <h2 id="news-modal-title">Заголовок новости</h2>
-        <button class="modal-close" id="close-news-modal">×</button>
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="close-news-modal" aria-label="Закрыть">×</button>
+      <div class="modal-media" id="news-modal-media">
+        <!-- Изображение или видео будет вставлено через JS -->
       </div>
-      <img id="news-modal-image" src="" alt="" class="news-modal-image">
-      <div class="news-modal-meta" id="news-modal-meta"></div>
-      <div class="news-modal-content" id="news-modal-content"></div>
+      <div class="modal-body">
+        <h2 class="modal-title" id="news-modal-title">Заголовок новости</h2>
+        <div class="modal-content-text" id="news-modal-content"></div>
+        <div class="modal-meta">
+          <span class="modal-date" id="news-modal-date"></span>
+          <span class="modal-views" id="news-modal-views">
+            <span class="views-icon">👁</span>
+            <span class="views-count">0</span>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 
